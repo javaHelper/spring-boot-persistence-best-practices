@@ -17,8 +17,8 @@ public class BookstoreService {
     private final EbookRepository ebookRepository;
 
     public BookstoreService(AuthorRepository authorRepository,
-            PaperbackRepository paperbackRepository,
-            EbookRepository ebookRepository) {
+                            PaperbackRepository paperbackRepository,
+                            EbookRepository ebookRepository) {
 
         this.authorRepository = authorRepository;
         this.paperbackRepository = paperbackRepository;
@@ -53,15 +53,13 @@ public class BookstoreService {
 
     @Transactional
     public void fetchAndRemovePaperback() {
-        Paperback paperback = paperbackRepository
-                .findByTitle("The beatles anthology");        
+        Paperback paperback = paperbackRepository.findByTitle("The beatles anthology");
         paperbackRepository.delete(paperback);
     }
 
     @Transactional
-    public void fetchAndRemoveEbook() {        
-        Ebook ebook = ebookRepository
-                .findByTitle("Anthology myths");         
+    public void fetchAndRemoveEbook() {
+        Ebook ebook = ebookRepository.findByTitle("Anthology myths");
         ebookRepository.delete(ebook);
-    }  
+    }
 }

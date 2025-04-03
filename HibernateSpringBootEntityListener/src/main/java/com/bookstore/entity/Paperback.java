@@ -1,7 +1,9 @@
 package com.bookstore.entity;
 
+import jakarta.persistence.Entity;
+
 import java.io.Serializable;
-import javax.persistence.Entity;
+
 
 @Entity
 public class Paperback extends Book implements Serializable {
