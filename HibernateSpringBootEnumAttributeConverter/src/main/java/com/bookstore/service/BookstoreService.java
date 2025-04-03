@@ -25,7 +25,7 @@ public class BookstoreService {
     }
 
     public void fetchAuthor() {
-        Author author = authorRepository.findById(1L).orElseThrow();
+        Author author = authorRepository.findById(1L).orElseThrow(() -> new RuntimeException("Some Exception"));
         System.out.println(author);
     }
 }

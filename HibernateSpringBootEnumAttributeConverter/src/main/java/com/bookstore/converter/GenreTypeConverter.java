@@ -1,16 +1,17 @@
 package com.bookstore.converter;
 
 import com.bookstore.enums.GenreType;
+import jakarta.persistence.AttributeConverter;
+
 import static com.bookstore.enums.GenreType.ANTHOLOGY;
 import static com.bookstore.enums.GenreType.HISTORY;
 import static com.bookstore.enums.GenreType.HORROR;
-import javax.persistence.AttributeConverter;
 
 public class GenreTypeConverter implements AttributeConverter<GenreType, Integer> {
 
     @Override
     public Integer convertToDatabaseColumn(GenreType attr) {
-        
+
         if (attr == null) {
             return null;
         }
@@ -29,7 +30,7 @@ public class GenreTypeConverter implements AttributeConverter<GenreType, Integer
 
     @Override
     public GenreType convertToEntityAttribute(Integer dbData) {
-        
+
         if (dbData == null) {
             return null;
         }
