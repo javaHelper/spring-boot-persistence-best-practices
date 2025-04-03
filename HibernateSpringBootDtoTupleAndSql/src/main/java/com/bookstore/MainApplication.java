@@ -2,7 +2,7 @@ package com.bookstore;
 
 import java.util.List;
 import com.bookstore.service.BookstoreService;
-import javax.persistence.Tuple;
+import jakarta.persistence.Tuple;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

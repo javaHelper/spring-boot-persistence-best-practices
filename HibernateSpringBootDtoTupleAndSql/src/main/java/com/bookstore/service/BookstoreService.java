@@ -2,7 +2,7 @@ package com.bookstore.service;
 
 import java.util.List;
 import com.bookstore.repository.AuthorRepository;
-import javax.persistence.Tuple;
+import jakarta.persistence.Tuple;
 import org.springframework.stereotype.Service;
 
 @Service
