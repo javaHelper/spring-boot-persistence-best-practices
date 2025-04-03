@@ -24,12 +24,12 @@ public class CheckReviewEventHandler {
 
     @Async
     @TransactionalEventListener
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
+   // @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void handleCheckReviewEvent(CheckReviewEvent event) {
 
         BookReview bookReview = event.getBookReview();
 
-        logger.info(() -> "Starting checking of review: " + bookReview.getId());
+        logger.info(() -> "###### Starting checking of review: " + bookReview.getId());
 
         try {
             // simulate a check out of review grammar, content, acceptance 
