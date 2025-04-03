@@ -1,9 +1,9 @@
 package com.bookstore.service;
 
+import org.springframework.stereotype.Service;
+
 import com.bookstore.entity.Author;
 import com.bookstore.repository.AuthorRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class BookstoreService {
@@ -25,7 +25,7 @@ public class BookstoreService {
     
     public void displayAuthor() {
         
-        Author author = authorRepository.findById(1L).orElseThrow();
+        Author author = authorRepository.findById(1L).orElse(null);
         
         System.out.println(author);
     }

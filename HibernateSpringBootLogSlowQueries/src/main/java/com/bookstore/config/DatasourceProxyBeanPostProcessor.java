@@ -76,17 +76,16 @@ public class DatasourceProxyBeanPostProcessor implements BeanPostProcessor {
         }
 
         @Override
-        public Object invoke(final MethodInvocation invocation) throws Throwable {
+		public Object invoke(final MethodInvocation invocation) throws Throwable {
 
-            final Method proxyMethod = ReflectionUtils.
-                    findMethod(this.dataSource.getClass(),
-                            invocation.getMethod().getName());
+			final Method proxyMethod = ReflectionUtils.findMethod(this.dataSource.getClass(),
+					invocation.getMethod().getName());
 
-            if (proxyMethod != null) {
-                return proxyMethod.invoke(this.dataSource, invocation.getArguments());
-            }
+			if (proxyMethod != null) {
+				return proxyMethod.invoke(this.dataSource, invocation.getArguments());
+			}
 
-            return invocation.proceed();
-        }
+			return invocation.proceed();
+		}
     }
 }
