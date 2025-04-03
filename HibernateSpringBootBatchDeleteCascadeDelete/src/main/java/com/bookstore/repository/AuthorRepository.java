@@ -2,8 +2,10 @@ package com.bookstore.repository;
 
 import com.bookstore.entity.Author;
 import java.util.List;
-import javax.persistence.QueryHint;
-import static org.hibernate.jpa.QueryHints.HINT_PASS_DISTINCT_THROUGH;
+//import static org.hibernate.jpa.QueryHints.HINT_PASS_DISTINCT_THROUGH;
+import static org.hibernate.query.hint.QueryHints.PASS_DISTINCT_THROUGH;
+
+import jakarta.persistence.QueryHint;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.QueryHints;
