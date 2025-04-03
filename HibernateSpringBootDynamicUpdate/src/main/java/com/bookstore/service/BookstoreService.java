@@ -16,7 +16,7 @@ public class BookstoreService {
 
     @Transactional
     public void updateAuthor() {
-        Author author = authorRepository.findById(1L).orElseThrow();
+        Author author = authorRepository.findById(1L).orElse(null);
 
         author.setSellrank(222);
     }
