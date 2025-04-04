@@ -17,13 +17,11 @@ public class ShoppingCartService {
     
     @Transactional(readOnly=true)
     public List<ShoppingCartDto> allShoppingCart() {
-        
         return shoppingCartRepository.fetchShoppingCart();
     }
     
     @Transactional(readOnly=true)
     public List<ShoppingCartDto> byPriceShoppingCart() {
-        
         return shoppingCartRepository.fetchShoppingCartByPrice(40);
     }
 }
