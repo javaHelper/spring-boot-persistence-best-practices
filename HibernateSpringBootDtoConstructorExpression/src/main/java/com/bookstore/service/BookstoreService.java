@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BookstoreService {
-
     private final AuthorRepository authorRepository;
 
     public BookstoreService(AuthorRepository authorRepository) {
@@ -15,7 +14,6 @@ public class BookstoreService {
     }
 
     public List<AuthorDto> fetchAuthors() {
-
         return authorRepository.fetchAuthors();
     }
 }
