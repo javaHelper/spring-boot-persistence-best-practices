@@ -3,6 +3,8 @@
 
 **Description:** Batch inserts (in MySQL) in Spring Boot style.
 
+Not a good approach
+
 **Key points:**
 - in `application.properties` set `spring.jpa.properties.hibernate.jdbc.batch_size`
 - in `application.properties` set `spring.jpa.properties.hibernate.generate_statistics` (just to check that batching is working)
@@ -26,4 +28,3 @@
 </td></tr></table>
 
 -----------------------------------------------------------------------------------------------------------------------    
-

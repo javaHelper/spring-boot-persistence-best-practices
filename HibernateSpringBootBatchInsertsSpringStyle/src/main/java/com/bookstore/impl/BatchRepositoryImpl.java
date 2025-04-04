@@ -6,7 +6,8 @@ import java.io.Serializable;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.EntityManager;
+
+import jakarta.persistence.EntityManager;
 import org.hibernate.dialect.Dialect;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
@@ -20,10 +21,8 @@ public class BatchRepositoryImpl<T, ID extends Serializable>
 
     private final EntityManager entityManager;
 
-    public BatchRepositoryImpl(JpaEntityInformation entityInformation,
-            EntityManager entityManager) {
+    public BatchRepositoryImpl(JpaEntityInformation entityInformation, EntityManager entityManager) {
         super(entityInformation, entityManager);
-
         this.entityManager = entityManager;
     }
 
@@ -35,17 +34,14 @@ public class BatchRepositoryImpl<T, ID extends Serializable>
             throw new IllegalArgumentException("The given Iterable of entities cannot be null!");
         }
 
-        int i = 0;       
+        int i = 0;
         for (S entity : entities) {
             entityManager.persist(entity);
-
             i++;
 
             // Flush a batch of inserts and release memory
             if (i % batchSize() == 0 && i > 0) {
-                logger.log(Level.INFO,
-                        "Flushing the EntityManager containing {0} entities ...", i);
-
+                logger.log(Level.INFO, "Flushing the EntityManager containing {0} entities ...", i);
                 entityManager.flush();
                 entityManager.clear();
                 i = 0;
@@ -53,9 +49,7 @@ public class BatchRepositoryImpl<T, ID extends Serializable>
         }
 
         if (i > 0) {
-            logger.log(Level.INFO,
-                    "Flushing the remaining {0} entities ...", i);
-
+            logger.log(Level.INFO, "Flushing the remaining {0} entities ...", i);
             entityManager.flush();
             entityManager.clear();
         }
@@ -63,11 +57,10 @@ public class BatchRepositoryImpl<T, ID extends Serializable>
 
     private static int batchSize() {
 
-        int batchsize = Integer.valueOf(Dialect.DEFAULT_BATCH_SIZE); // default batch size
+        int batchsize = 30;
 
         Properties configuration = new Properties();
-        try ( InputStream inputStream = BatchRepositoryImpl.class.getClassLoader()
-                .getResourceAsStream("application.properties")) {
+        try (InputStream inputStream = BatchRepositoryImpl.class.getClassLoader().getResourceAsStream("application.properties")) {
             configuration.load(inputStream);
         } catch (IOException ex) {
             logger.log(Level.SEVERE,
