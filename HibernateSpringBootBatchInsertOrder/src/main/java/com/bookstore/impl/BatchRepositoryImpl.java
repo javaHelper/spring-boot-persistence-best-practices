@@ -6,8 +6,10 @@ import java.io.Serializable;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.EntityManager;
+
+import jakarta.persistence.EntityManager;
 import org.hibernate.dialect.Dialect;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,10 +22,8 @@ public class BatchRepositoryImpl<T, ID extends Serializable>
 
     private final EntityManager entityManager;
 
-    public BatchRepositoryImpl(JpaEntityInformation entityInformation,
-            EntityManager entityManager) {
+    public BatchRepositoryImpl(JpaEntityInformation entityInformation, EntityManager entityManager) {
         super(entityInformation, entityManager);
-
         this.entityManager = entityManager;
     }
 
@@ -43,9 +43,7 @@ public class BatchRepositoryImpl<T, ID extends Serializable>
 
             // Flush a batch of inserts and release memory
             if (i % batchSize() == 0 && i > 0) {
-                logger.log(Level.INFO,
-                        "Flushing the EntityManager containing {0} entities ...", i);
-
+                logger.log(Level.INFO, "Flushing the EntityManager containing {0} entities ...", i);
                 entityManager.flush();
                 entityManager.clear();
                 i = 0;
@@ -53,34 +51,26 @@ public class BatchRepositoryImpl<T, ID extends Serializable>
         }
 
         if (i > 0) {
-            logger.log(Level.INFO,
-                    "Flushing the remaining {0} entities ...", i);
-
+            logger.log(Level.INFO, "Flushing the remaining {0} entities ...", i);
             entityManager.flush();
             entityManager.clear();
         }
     }
 
-    private static int batchSize() {
-
-        int batchsize = Integer.valueOf(Dialect.DEFAULT_BATCH_SIZE); // default batch size
-
+    private  int batchSize() {
+        int batchsize = 30;
         Properties configuration = new Properties();
-        try (InputStream inputStream = BatchRepositoryImpl.class.getClassLoader()
-                .getResourceAsStream("application.properties")) {
+        try (InputStream inputStream = BatchRepositoryImpl.class.getClassLoader().getResourceAsStream("application.properties")) {
             configuration.load(inputStream);
         } catch (IOException ex) {
-            logger.log(Level.SEVERE,
-                    "Cannot fetch batch size. Using further Dialect.DEFAULT_BATCH_SIZE{0}", ex);
+            logger.log(Level.SEVERE, "Cannot fetch batch size. Using further Dialect.DEFAULT_BATCH_SIZE{0}", ex);
             return batchsize;
         }
 
-        String batchsizestr = configuration.getProperty(
-                "spring.jpa.properties.hibernate.jdbc.batch_size");
+        String batchsizestr = configuration.getProperty("spring.jpa.properties.hibernate.jdbc.batch_size");
         if (batchsizestr != null) {
-            batchsize = Integer.valueOf(batchsizestr);
+            batchsize = Integer.parseInt(batchsizestr);
         }
-
         return batchsize;
     }
 }
