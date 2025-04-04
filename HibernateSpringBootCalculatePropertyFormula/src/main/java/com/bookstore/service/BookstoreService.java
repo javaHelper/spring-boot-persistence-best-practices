@@ -16,7 +16,6 @@ public class BookstoreService {
     
     public void fetchBooks() {
         List<Book> books = bookRepository.findAll();
-        
         books.forEach(System.out::println);
     }
 }
