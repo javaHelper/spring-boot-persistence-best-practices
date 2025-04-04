@@ -7,16 +7,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class MainApplication {
+public class MyMainApplication {
 
     private final BookstoreService bookstoreService;
 
-    public MainApplication(BookstoreService bookstoreService) {
+    public MyMainApplication(BookstoreService bookstoreService) {
         this.bookstoreService = bookstoreService;
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(MainApplication.class, args);
+        SpringApplication.run(MyMainApplication.class, args);
     }
 
     @Bean

@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface AuthorRepository extends JpaRepository<Author, Long> {
 
     default Map<Long, Author> fetchIdAuthor() {
-
         return findAll().stream()
                 .collect(Collectors.toMap(Author::getId, Function.identity()));
     }
@@ -24,14 +23,8 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
     List<Object[]> groupByGenreObj();
 
     default Map<String, Long> groupByGenre() {
-
         return groupByGenreObj()
                 .stream()
-                .collect(
-                        Collectors.toMap(
-                                t -> ((String) t[0]),
-                                t -> ((long) t[1])
-                        )
-                );
+                .collect(Collectors.toMap(t -> ((String) t[0]), t -> ((long) t[1])));
     }
 }

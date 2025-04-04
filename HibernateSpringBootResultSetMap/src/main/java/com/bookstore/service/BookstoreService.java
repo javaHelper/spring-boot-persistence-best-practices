@@ -13,12 +13,10 @@ public class BookstoreService {
     }
 
     public void fetchIdAndAuthor() {
-        
         System.out.println(authorRepository.fetchIdAuthor());
     }
     
     public void fetchGroupByGenre() {
-            
         System.out.println(authorRepository.groupByGenre());
     }
 }
