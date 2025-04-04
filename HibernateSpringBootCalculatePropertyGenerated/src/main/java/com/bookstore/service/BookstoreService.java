@@ -9,8 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class BookstoreService {
 
-    private static final Logger logger
-            = Logger.getLogger(BookstoreService.class.getName());
+    private static final Logger logger = Logger.getLogger(BookstoreService.class.getName());
 
     private final BookRepository bookRepository;
 
@@ -20,13 +19,11 @@ public class BookstoreService {
 
     public void insertBook() {
         Book book = new Book();
-
         book.setTitle("Ancient History");
         book.setIsbn("001-AH");
         book.setPrice(13.99);
 
         bookRepository.save(book);
-
         System.out.println("Discounted price after insert: " + book.getDiscounted());
     }
 
@@ -36,7 +33,6 @@ public class BookstoreService {
         book.setPrice(9.99);
         
         bookRepository.flush();
-
         System.out.println("Discounted price after update: " + book.getDiscounted());
     }
 }
