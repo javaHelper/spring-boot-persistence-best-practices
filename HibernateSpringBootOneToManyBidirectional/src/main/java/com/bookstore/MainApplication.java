@@ -29,7 +29,7 @@ public class MainApplication {
             bookstoreService.deleteBookOfAuthor();
             
             System.out.println("\nDelete all book of an author...");
-            bookstoreService.deleteAllBooksOfAuthor();
+            //bookstoreService.deleteAllBooksOfAuthor();
         };
     }
 }

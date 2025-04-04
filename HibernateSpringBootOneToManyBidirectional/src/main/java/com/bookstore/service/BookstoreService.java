@@ -12,12 +12,10 @@ public class BookstoreService {
     private final AuthorRepository authorRepository;
 
     public BookstoreService(AuthorRepository authorRepository) {
-
         this.authorRepository = authorRepository;
     }
 
     public void insertAuthorWithBooks() {
-
         Author author = new Author();
         author.setName("Alicia Tom");
         author.setAge(38);
@@ -26,8 +24,13 @@ public class BookstoreService {
         Book book = new Book();
         book.setIsbn("001-AT");
         book.setTitle("The book of swords");
-
         author.addBook(book); // use addBook() helper
+
+        book = new Book();
+        book.setIsbn("002-AT");
+        book.setTitle("The book of swords 2");
+        author.addBook(book); // use addBook() helper
+        System.out.println(author);
 
         authorRepository.save(author);
     }

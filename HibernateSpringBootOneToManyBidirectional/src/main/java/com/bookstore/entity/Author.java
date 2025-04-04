@@ -1,16 +1,19 @@
 package com.bookstore.entity;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
+@Data
 @Entity
 public class Author implements Serializable {
 
@@ -24,8 +27,7 @@ public class Author implements Serializable {
     private String genre;
     private int age;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            mappedBy = "author", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author", orphanRemoval = true)
     private List<Book> books = new ArrayList<>();
 
     public void addBook(Book book) {
@@ -43,56 +45,19 @@ public class Author implements Serializable {
 
         while (iterator.hasNext()) {
             Book book = iterator.next();
-
             book.setAuthor(null);
             iterator.remove();
         }
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }  
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
-
     @Override
     public String toString() {
-        return "Author{" + "id=" + id + ", name=" + name 
-                + ", genre=" + genre + ", age=" + age + '}';
+        return "Author{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", genre='" + genre + '\'' +
+                ", age=" + age +
+                ", books=" + books +
+                '}';
     }
-    
 }
