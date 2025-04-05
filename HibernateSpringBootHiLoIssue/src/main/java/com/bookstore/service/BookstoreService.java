@@ -16,7 +16,6 @@ public class BookstoreService {
 
     @Transactional
     public void save3Authors() {
-
         for (int i = 1; i <= 3; i++) {
             Author author = new Author();
             author.setName("Author_" + i);
