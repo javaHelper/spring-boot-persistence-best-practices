@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface BookRepository extends JpaRepository<Book, Long> {
 
     @Transactional(readOnly = true)
-    @Query(value = "SELECT b FROM Book b WHERE b.isbn "
-            + "= function('concat_ws', '-', ?1, ?2)")
+    @Query(value = "SELECT b FROM Book b WHERE b.isbn = function('concat_ws', '-', ?1, ?2)")
     Book fetchByIsbn(String code, String author);
 }
