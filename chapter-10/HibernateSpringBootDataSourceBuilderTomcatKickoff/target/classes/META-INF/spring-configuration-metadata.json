@@ -1,0 +1,385 @@
+{
+  "groups": [
+    {
+      "name": "app.datasource",
+      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
+      "sourceType": "com.app.dsconfig.ConfigureDataSource",
+      "sourceMethod": "public org.springframework.boot.autoconfigure.jdbc.DataSourceProperties dataSourceProperties() "
+    },
+    {
+      "name": "app.datasource",
+      "type": "org.apache.tomcat.jdbc.pool.DataSource",
+      "sourceType": "com.app.dsconfig.ConfigureDataSource",
+      "sourceMethod": "public org.apache.tomcat.jdbc.pool.DataSource dataSource(org.springframework.boot.autoconfigure.jdbc.DataSourceProperties) "
+    },
+    {
+      "name": "app.datasource.xa",
+      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
+      "sourceMethod": "public org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.Xa getXa() "
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.datasource.abandon-when-percentage-full",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.access-to-underlying-connection-allowed",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.alternate-username-allowed",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.commit-on-return",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.connection-properties",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.continue-on-error",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.data",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.data-password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.data-source",
+      "type": "java.lang.Object",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.data-source-j-n-d-i",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.data-username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.db-properties",
+      "type": "java.util.Properties",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.default-auto-commit",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.default-catalog",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.default-read-only",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.default-transaction-isolation",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.fair-queue",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.generate-unique-name",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.ignore-exception-on-pre-load",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.init-s-q-l",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.initial-size",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.initialization-mode",
+      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.jdbc-interceptors",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.jmx-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.jndi-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.log-abandoned",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.log-validation-errors",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.login-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.max-active",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.max-age",
+      "type": "java.lang.Long",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.max-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.max-wait",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.min-evictable-idle-time-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.min-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.name",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.num-tests-per-eviction-run",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.platform",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.propagate-interrupt-state",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.remove-abandoned",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.remove-abandoned-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.rollback-on-return",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.schema",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.schema-password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.schema-username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.separator",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.sql-script-encoding",
+      "type": "java.nio.charset.Charset",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.suspect-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.test-on-borrow",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.test-on-connect",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.test-on-return",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.test-while-idle",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.time-between-eviction-runs-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.type",
+      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.url",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.url",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.use-disposable-connection-facade",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.use-equals",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.use-lock",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.use-statement-facade",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.validation-interval",
+      "type": "java.lang.Long",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.validation-query",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.validation-query-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.validator-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.tomcat.jdbc.pool.DataSource"
+    },
+    {
+      "name": "app.datasource.xa.data-source-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa"
+    },
+    {
+      "name": "app.datasource.xa.properties",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa"
+    }
+  ],
+  "hints": []
+}

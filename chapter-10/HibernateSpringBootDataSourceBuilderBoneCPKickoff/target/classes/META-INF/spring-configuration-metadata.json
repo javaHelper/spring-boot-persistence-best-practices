@@ -1,0 +1,440 @@
+{
+  "groups": [
+    {
+      "name": "app.datasource",
+      "type": "com.jolbox.bonecp.BoneCPDataSource",
+      "sourceType": "com.app.dsconfig.ConfigureDataSource",
+      "sourceMethod": "public com.jolbox.bonecp.BoneCPDataSource dataSource(org.springframework.boot.autoconfigure.jdbc.DataSourceProperties) "
+    },
+    {
+      "name": "app.datasource",
+      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
+      "sourceType": "com.app.dsconfig.ConfigureDataSource",
+      "sourceMethod": "public org.springframework.boot.autoconfigure.jdbc.DataSourceProperties dataSourceProperties() "
+    },
+    {
+      "name": "app.datasource.xa",
+      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
+      "sourceMethod": "public org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.Xa getXa() "
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.datasource.acquire-increment",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.acquire-retry-attempts",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.acquire-retry-delay-in-ms",
+      "type": "java.lang.Long",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.client-info",
+      "type": "java.util.Properties",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.close-connection-watch",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.close-connection-watch-timeout-in-ms",
+      "type": "java.lang.Long",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.close-open-statements",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.config-file",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.connection-hook",
+      "type": "com.jolbox.bonecp.hooks.ConnectionHook",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.connection-hook-class-name",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.connection-test-statement",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.connection-timeout-in-ms",
+      "type": "java.lang.Long",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.continue-on-error",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.data",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.data-password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.data-username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.default-auto-commit",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.default-catalog",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.default-read-only",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.default-transaction-isolation",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.deregister-driver-on-close",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.detect-unclosed-statements",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.detect-unresolved-transactions",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.disable-connection-tracking",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.disable-j-m-x",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.driver-class",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.driver-properties",
+      "type": "java.util.Properties",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.external-auth",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.generate-unique-name",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.idle-connection-test-period-in-minutes",
+      "type": "java.lang.Long",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.idle-max-age-in-minutes",
+      "type": "java.lang.Long",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.init-s-q-l",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.initialization-mode",
+      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.jdbc-url",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.jndi-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.lazy-init",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.log-statements-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.login-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.max-connection-age-in-seconds",
+      "type": "java.lang.Long",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.max-connections-per-partition",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.min-connections-per-partition",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.null-on-connection-timeout",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.partition-count",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.platform",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.pool-availability-threshold",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.pool-name",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.pool-strategy",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.query-execute-time-limit-in-ms",
+      "type": "java.lang.Long",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.reset-connection-on-close",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.schema",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.schema-password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.schema-username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.separator",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.service-order",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.sql-script-encoding",
+      "type": "java.nio.charset.Charset",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.statements-cache-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.statistics-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.transaction-recovery-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.type",
+      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.url",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.user",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource"
+    },
+    {
+      "name": "app.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.xa.data-source-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa"
+    },
+    {
+      "name": "app.datasource.xa.properties",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa"
+    },
+    {
+      "name": "app.datasource.close-connection-watch-timeout",
+      "type": "java.lang.Long",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource",
+      "deprecated": true,
+      "deprecation": {}
+    },
+    {
+      "name": "app.datasource.connection-timeout",
+      "type": "java.lang.Long",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource",
+      "deprecated": true,
+      "deprecation": {}
+    },
+    {
+      "name": "app.datasource.idle-connection-test-period",
+      "type": "java.lang.Long",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource",
+      "deprecated": true,
+      "deprecation": {}
+    },
+    {
+      "name": "app.datasource.idle-max-age",
+      "type": "java.lang.Long",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource",
+      "deprecated": true,
+      "deprecation": {}
+    },
+    {
+      "name": "app.datasource.max-connection-age",
+      "type": "java.lang.Long",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource",
+      "deprecated": true,
+      "deprecation": {}
+    },
+    {
+      "name": "app.datasource.prepared-statements-cache-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource",
+      "deprecated": true,
+      "deprecation": {}
+    },
+    {
+      "name": "app.datasource.release-helper-threads",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource",
+      "deprecated": true,
+      "deprecation": {}
+    },
+    {
+      "name": "app.datasource.statement-cache-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource",
+      "deprecated": true,
+      "deprecation": {}
+    },
+    {
+      "name": "app.datasource.statement-release-helper-threads",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource",
+      "deprecated": true,
+      "deprecation": {}
+    },
+    {
+      "name": "app.datasource.statements-cached-per-connection",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jolbox.bonecp.BoneCPDataSource",
+      "deprecated": true,
+      "deprecation": {}
+    }
+  ],
+  "hints": []
+}

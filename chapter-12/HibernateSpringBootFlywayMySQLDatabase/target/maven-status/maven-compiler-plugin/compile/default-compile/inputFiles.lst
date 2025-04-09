@@ -1,0 +1,6 @@
+/Users/prats/Documents/Prateek/spring-boot-persistence-best-practices/HibernateSpringBootFlywayMySQLDatabase/src/main/java/com/bookstore/repository/BookRepository.java
+/Users/prats/Documents/Prateek/spring-boot-persistence-best-practices/HibernateSpringBootFlywayMySQLDatabase/src/main/java/com/bookstore/MainApplication.java
+/Users/prats/Documents/Prateek/spring-boot-persistence-best-practices/HibernateSpringBootFlywayMySQLDatabase/src/main/java/com/bookstore/entity/Book.java
+/Users/prats/Documents/Prateek/spring-boot-persistence-best-practices/HibernateSpringBootFlywayMySQLDatabase/src/main/java/com/bookstore/service/BookstoreService.java
+/Users/prats/Documents/Prateek/spring-boot-persistence-best-practices/HibernateSpringBootFlywayMySQLDatabase/src/main/java/com/bookstore/entity/Author.java
+/Users/prats/Documents/Prateek/spring-boot-persistence-best-practices/HibernateSpringBootFlywayMySQLDatabase/src/main/java/com/bookstore/repository/AuthorRepository.java

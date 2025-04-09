@@ -1,0 +1,6 @@
+com/bookstore/MainApplication.class
+com/bookstore/entity/Author.class
+com/bookstore/entity/Book.class
+com/bookstore/service/BookstoreService.class
+com/bookstore/repository/AuthorRepository.class
+com/bookstore/repository/BookRepository.class

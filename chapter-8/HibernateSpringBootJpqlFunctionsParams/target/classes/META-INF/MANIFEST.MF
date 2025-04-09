@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: prateekashtikar
+Build-Jdk: 21.0.5
+Implementation-Title: HibernateSpringBootJpqlFunctionsParams
+Implementation-Version: 1.0
+Implementation-Vendor-Id: com.jpa
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/HibernateSpringBootJpqlFunctionsParams
+Created-By: Maven Integration for Eclipse
+

@@ -1,0 +1,380 @@
+{
+  "groups": [
+    {
+      "name": "app.datasource",
+      "type": "com.mchange.v2.c3p0.ComboPooledDataSource",
+      "sourceType": "com.app.dsconfig.ConfigureDataSource",
+      "sourceMethod": "public com.mchange.v2.c3p0.ComboPooledDataSource dataSource(org.springframework.boot.autoconfigure.jdbc.DataSourceProperties) "
+    },
+    {
+      "name": "app.datasource",
+      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
+      "sourceType": "com.app.dsconfig.ConfigureDataSource",
+      "sourceMethod": "public org.springframework.boot.autoconfigure.jdbc.DataSourceProperties dataSourceProperties() "
+    },
+    {
+      "name": "app.datasource.xa",
+      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
+      "sourceMethod": "public org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.Xa getXa() "
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.datasource.acquire-increment",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.acquire-retry-attempts",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.acquire-retry-delay",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.all-users",
+      "type": "java.util.Collection",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.auto-commit-on-close",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.automatic-test-table",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.break-after-acquire-failure",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.checkout-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.connection-customizer-class-name",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.connection-pool-data-source",
+      "type": "javax.sql.ConnectionPoolDataSource",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.connection-tester-class-name",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.context-class-loader-source",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.continue-on-error",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.data",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.data-password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.data-source-name",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.data-username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.debug-unreturned-connection-stack-traces",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.description",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.driver-class",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.extensions",
+      "type": "java.util.Map",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.factory-class-location",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.force-ignore-unresolved-transactions",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.force-synchronous-checkins",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.force-use-named-driver-class",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.generate-unique-name",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.identity-token",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.idle-connection-test-period",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.initial-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.initialization-mode",
+      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.jdbc-url",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.jndi-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.login-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.max-administrative-task-time",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.max-connection-age",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.max-idle-time",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.max-idle-time-excess-connections",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.max-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.max-statements",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.max-statements-per-connection",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.min-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.num-helper-threads",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.override-default-password",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.override-default-user",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.platform",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.preferred-test-query",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.privilege-spawned-threads",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.properties",
+      "type": "java.util.Properties",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.property-cycle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.schema",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.schema-password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.schema-username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.separator",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.sql-script-encoding",
+      "type": "java.nio.charset.Charset",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.statement-cache-num-deferred-close-threads",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.test-connection-on-checkin",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.test-connection-on-checkout",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.type",
+      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.unreturned-connection-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.url",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.user",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.user-overrides",
+      "type": "java.util.Map",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.user-overrides-as-string",
+      "type": "java.lang.String",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.uses-traditional-reflective-proxies",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.mchange.v2.c3p0.ComboPooledDataSource"
+    },
+    {
+      "name": "app.datasource.xa.data-source-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa"
+    },
+    {
+      "name": "app.datasource.xa.properties",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa"
+    }
+  ],
+  "hints": []
+}

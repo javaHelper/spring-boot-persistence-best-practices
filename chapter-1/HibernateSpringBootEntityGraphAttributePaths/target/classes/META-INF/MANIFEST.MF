@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: prateekashtikar
+Build-Jdk: 21.0.5
+Implementation-Title: HibernateSpringBootEntityGraphAttributePaths
+Implementation-Version: 1.0
+Implementation-Vendor-Id: com.tennis
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/HibernateSpringBootEntityGraphAttributePaths
+Created-By: Maven Integration for Eclipse
+

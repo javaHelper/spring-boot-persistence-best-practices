@@ -1,0 +1,340 @@
+{
+  "groups": [
+    {
+      "name": "app.datasource",
+      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
+      "sourceType": "com.app.dsconfig.ConfigureDataSource",
+      "sourceMethod": "public org.springframework.boot.autoconfigure.jdbc.DataSourceProperties dataSourceProperties() "
+    },
+    {
+      "name": "app.datasource",
+      "type": "org.apache.commons.dbcp2.BasicDataSource",
+      "sourceType": "com.app.dsconfig.ConfigureDataSource",
+      "sourceMethod": "public org.apache.commons.dbcp2.BasicDataSource dataSource(org.springframework.boot.autoconfigure.jdbc.DataSourceProperties) "
+    },
+    {
+      "name": "app.datasource.xa",
+      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
+      "sourceMethod": "public org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.Xa getXa() "
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.datasource.abandoned-usage-tracking",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.access-to-underlying-connection-allowed",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.cache-state",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.connection-init-sqls",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.continue-on-error",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.data",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.data-password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.data-username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.default-auto-commit",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.default-catalog",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.default-query-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.default-read-only",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.default-transaction-isolation",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.driver",
+      "type": "java.sql.Driver",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.enable-auto-commit-on-return",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.eviction-policy-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.generate-unique-name",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.initial-size",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.initialization-mode",
+      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.jmx-name",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.jndi-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.lifo",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.log-abandoned",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.login-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.max-conn-lifetime-millis",
+      "type": "java.lang.Long",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.max-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.max-open-prepared-statements",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.max-total",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.max-wait-millis",
+      "type": "java.lang.Long",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.min-evictable-idle-time-millis",
+      "type": "java.lang.Long",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.min-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.num-tests-per-eviction-run",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.platform",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.pool-prepared-statements",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.remove-abandoned-on-borrow",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.remove-abandoned-on-maintenance",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.remove-abandoned-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.rollback-on-return",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.schema",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.schema-password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.schema-username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.separator",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.soft-min-evictable-idle-time-millis",
+      "type": "java.lang.Long",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.sql-script-encoding",
+      "type": "java.nio.charset.Charset",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.test-on-borrow",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.test-on-create",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.test-on-return",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.test-while-idle",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.time-between-eviction-runs-millis",
+      "type": "java.lang.Long",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.type",
+      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.url",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.url",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "app.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.validation-query",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.validation-query-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.commons.dbcp2.BasicDataSource"
+    },
+    {
+      "name": "app.datasource.xa.data-source-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa"
+    },
+    {
+      "name": "app.datasource.xa.properties",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa"
+    }
+  ],
+  "hints": []
+}
