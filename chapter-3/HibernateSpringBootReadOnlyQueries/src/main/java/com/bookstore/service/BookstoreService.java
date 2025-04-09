@@ -4,8 +4,9 @@ import com.bookstore.entity.Author;
 import com.bookstore.repository.AuthorRepository;
 import java.util.Arrays;
 import java.util.Map;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.hibernate.engine.spi.EntityEntry;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.springframework.stereotype.Service;
@@ -88,11 +89,7 @@ public class BookstoreService {
     }
 
     private org.hibernate.engine.spi.PersistenceContext getPersistenceContext() {
-
-        SharedSessionContractImplementor sharedSession = entityManager.unwrap(
-                SharedSessionContractImplementor.class
-        );
-
+        SharedSessionContractImplementor sharedSession = entityManager.unwrap(SharedSessionContractImplementor.class);
         return sharedSession.getPersistenceContext();
     }
 }
