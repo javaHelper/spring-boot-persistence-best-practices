@@ -10,8 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional(readOnly = true)
-public interface BookRepository extends JpaRepository<Book, Long>,
-        JpaSpecificationExecutor< Book> {
+public interface BookRepository extends JpaRepository<Book, Long>, JpaSpecificationExecutor< Book> {
 
     @Query("SELECT b FROM Book b WHERE b.id IN ?1")
     List<Book> fetchByMultipleIds(List<Long> ids);  

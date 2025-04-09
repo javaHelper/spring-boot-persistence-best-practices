@@ -2,11 +2,14 @@ package com.bookstore.specs;
 
 import com.bookstore.entity.Book;
 import java.util.List;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+
+
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 import org.springframework.data.jpa.domain.Specification;
+
 
 public class InIdsSpecification implements Specification<Book> {
 
@@ -17,10 +20,10 @@ public class InIdsSpecification implements Specification<Book> {
     }
 
     @Override
-    public Predicate toPredicate(Root<Book> root, 
-            CriteriaQuery<?> cquery, CriteriaBuilder cbuilder) {
+    public Predicate toPredicate(Root<Book> root,
+                                 CriteriaQuery<?> cquery, CriteriaBuilder cbuilder) {
 
-        return root.in(ids);
+        return root.get("id").in(ids);
 
         // or
         // Expression<String> expression = root.get("id");
