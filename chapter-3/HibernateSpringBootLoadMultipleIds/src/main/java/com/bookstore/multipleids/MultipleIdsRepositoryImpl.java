@@ -2,8 +2,9 @@ package com.bookstore.multipleids;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.hibernate.MultiIdentifierLoadAccess;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
@@ -25,44 +26,29 @@ public abstract class MultipleIdsRepositoryImpl<T, ID extends Serializable>
 
     @Override
     public List<T> fetchByMultipleIds(List<ID> ids) {
-
         Session session = entityManager.unwrap(Session.class);
-        MultiIdentifierLoadAccess<T> multiLoadAccess
-                = session.byMultipleIds(entityClass);
-        List<T> result = multiLoadAccess.multiLoad(ids);
-
-        return result;
+        MultiIdentifierLoadAccess<T> multiLoadAccess = session.byMultipleIds(entityClass);
+        return multiLoadAccess.multiLoad(ids);
     }
 
     @Override
     public List<T> fetchInBatchesByMultipleIds(List<ID> ids, int batchSize) {
-
-        List<T> result = getMultiLoadAccess().withBatchSize(batchSize).multiLoad(ids);
-
-        return result;
+        return getMultiLoadAccess().withBatchSize(batchSize).multiLoad(ids);
     }
 
     @Override
     public List<T> fetchBySessionCheckMultipleIds(List<ID> ids) {
-
-        List<T> result = getMultiLoadAccess().enableSessionCheck(true).multiLoad(ids);
-
-        return result;
+        return getMultiLoadAccess().enableSessionCheck(true).multiLoad(ids);
     }
 
     @Override
     public List<T> fetchInBatchesBySessionCheckMultipleIds(List<ID> ids, int batchSize) {
-
-        List<T> result = getMultiLoadAccess().enableSessionCheck(true)
+        return getMultiLoadAccess().enableSessionCheck(true)
                 .withBatchSize(batchSize).multiLoad(ids);
-
-        return result;
     }
 
     private MultiIdentifierLoadAccess<T> getMultiLoadAccess() {
-
         Session session = entityManager.unwrap(Session.class);
-
         return session.byMultipleIds(entityClass);
     }
 
