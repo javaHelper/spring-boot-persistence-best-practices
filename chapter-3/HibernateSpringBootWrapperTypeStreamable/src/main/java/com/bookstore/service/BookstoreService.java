@@ -19,8 +19,7 @@ public class BookstoreService {
     }
 
     @Transactional
-    public List<BookDto> updateBookPrice() {        
-        
+    public List<BookDto> updateBookPrice() {
         Books books = bookRepository.findBy();
         
         int sumPricesBefore = books.sumPrices();
@@ -28,11 +27,9 @@ public class BookstoreService {
         
         Map<Boolean, List<Book>> booksMap = books.partitionByPrice(25);
 
-        booksMap.get(Boolean.TRUE).forEach(
-                a -> a.setPrice(a.getPrice() + 3));
+        booksMap.get(Boolean.TRUE).forEach(a -> a.setPrice(a.getPrice() + 3));
 
-        booksMap.get(Boolean.FALSE).forEach(
-                a -> a.setPrice(a.getPrice() + 5));
+        booksMap.get(Boolean.FALSE).forEach(a -> a.setPrice(a.getPrice() + 5));
         
         int sumPricesAfter = books.sumPrices();
         System.out.println("Total prices after update: " + sumPricesAfter);

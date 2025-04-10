@@ -17,7 +17,6 @@ public class Books implements Streamable<Book> {
     }
 
     public Map<Boolean, List<Book>> partitionByPrice(int price) {
-
         return streamable.stream()
                 .collect(Collectors.partitioningBy((Book a) -> a.getPrice() >= price));
     }
@@ -25,7 +24,7 @@ public class Books implements Streamable<Book> {
     public int sumPrices() {
         return streamable.stream()
                 .map(Book::getPrice)
-                .reduce(0, (b1, b2) -> b1 + b2);
+                .reduce(0, Integer::sum);
     }
     
     public List<BookDto> toBookDto() {
