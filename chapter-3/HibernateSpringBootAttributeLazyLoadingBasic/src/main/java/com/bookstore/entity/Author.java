@@ -1,6 +1,7 @@
 package com.bookstore.entity;
 
 import jakarta.persistence.Basic;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
@@ -16,7 +17,8 @@ public class Author implements Serializable {
     @Id
     private Long id;
 
-    @Lob
+    @Column(columnDefinition = "LONGBLOB")
+    //@Lob
     @Basic(fetch = FetchType.LAZY)
     private byte[] avatar;
      

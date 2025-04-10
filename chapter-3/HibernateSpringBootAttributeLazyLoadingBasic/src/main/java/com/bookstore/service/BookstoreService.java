@@ -49,14 +49,11 @@ public class BookstoreService {
     }
 
     public List<Author> fetchAuthorsByAgeGreaterThanEqual(int age) {
-        List<Author> authors = authorRepository.findByAgeGreaterThanEqual(age);
-
-        return authors;
+        return authorRepository.findByAgeGreaterThanEqual(age);
     }
 
     @Transactional(readOnly = true)
     public byte[] fetchAuthorAvatarViaId(long id) {
-
         Author author = authorRepository.findById(id).orElseThrow();
         return author.getAvatar();
     }
@@ -76,7 +73,6 @@ public class BookstoreService {
 
     @Transactional(readOnly = true)
     public List<AuthorDto> fetchAuthorsWithAvatarsByAgeGreaterThanEqual(int age) {
-
         return authorRepository.findDtoByAgeGreaterThanEqual(40);
     }
 }
