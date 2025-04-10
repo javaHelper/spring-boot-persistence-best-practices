@@ -12,29 +12,21 @@ public class BookstoreService {
     private final AuthorRepository authorRepository;
 
     public BookstoreService(AuthorRepository authorRepository) {
-
         this.authorRepository = authorRepository;
     }
 
     @Transactional(readOnly = true)
     public List<AuthorDto> fetchAll() {
-        List<AuthorDto> authors = authorRepository.fetchAll();
-
-        return authors;
+        return authorRepository.fetchAll();
     }
     
     @Transactional(readOnly = true)
     public List<AuthorDto> fetchAgeNameGenre() {
-        List<AuthorDto> authors = authorRepository.fetchAgeNameGenre();
-
-        return authors;
+        return authorRepository.fetchAgeNameGenre();
     }
 
     @Transactional(readOnly = true)
     public List<AuthorDto> fetchNameEmail() {
-        List<AuthorDto> authors = authorRepository.fetchNameEmail();
-
-        return authors;
+        return authorRepository.fetchNameEmail();
     }
-
 }
