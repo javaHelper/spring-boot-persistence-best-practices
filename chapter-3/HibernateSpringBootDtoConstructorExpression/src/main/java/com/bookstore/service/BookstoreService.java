@@ -15,7 +15,6 @@ public class BookstoreService {
     }
 
     public List<AuthorDto> fetchAuthors() {
-
         return authorRepository.fetchAuthors();
     }
 }
