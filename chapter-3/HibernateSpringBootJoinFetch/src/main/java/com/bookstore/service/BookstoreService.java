@@ -19,12 +19,10 @@ public class BookstoreService {
     }
 
     public Author fetchAuthorWithBooksByName() {
-
         return authorRepository.fetchAuthorWithBooksByName("Joana Nimar");
     }
 
     public Book fetchBookWithAuthorByIsbn() {
-
         return bookRepository.fetchBookWithAuthorByIsbn("002-JN");
     }
 }
