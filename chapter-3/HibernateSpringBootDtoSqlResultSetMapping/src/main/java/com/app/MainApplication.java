@@ -12,8 +12,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class MainApplication {
 
-    private static final Logger logger
-            = Logger.getLogger(MainApplication.class.getName());
+    private static final Logger logger = Logger.getLogger(MainApplication.class.getName());
 
     private final CategoryService categoryService;
 
@@ -28,7 +27,6 @@ public class MainApplication {
     @Bean
     public ApplicationRunner init() {
         return args -> {
-
             categoryService.populateCategories();
             List<CategoryDto> categories = categoryService.fetchCategories();
 
