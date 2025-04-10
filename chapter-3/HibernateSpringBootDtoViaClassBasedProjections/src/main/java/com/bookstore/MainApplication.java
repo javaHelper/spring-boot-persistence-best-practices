@@ -24,9 +24,7 @@ public class MainApplication {
     @Bean
     public ApplicationRunner init() {
         return args -> {
-
             List<AuthorNameAge> authors = bookstoreService.fetchFirst2ByBirthplace();
-
             System.out.println("Number of authors:" + authors.size());
 
             for (AuthorNameAge author : authors) {
