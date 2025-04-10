@@ -15,10 +15,8 @@ public class BookstoreService {
     }
 
    public List<AuthorDto> fetchAuthorWithBook() {
-       
        List<AuthorDto> authors = dao.fetchAuthorWithBook();       
        authors.forEach(a -> System.out.println("\n" + a + " | books: " + a.getBooks()));
-       
        return authors;
    }
 }
