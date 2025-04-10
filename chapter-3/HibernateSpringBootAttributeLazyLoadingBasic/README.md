@@ -1,5 +1,7 @@
 **[How To Use Hibernate Attribute Lazy Loading](https://github.com/AnghelLeonard/Hibernate-SpringBoot/blob/master/HibernateSpringBootAttributeLazyLoadingBasic)**
 
+# Refer the sub-entities code which is much better option.
+
 
 ```
 Persisting several authors ...
