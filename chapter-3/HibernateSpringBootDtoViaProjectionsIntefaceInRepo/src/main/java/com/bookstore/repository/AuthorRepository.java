@@ -13,9 +13,7 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
     List<AuthorNameAge> findFirst2ByGenre(String genre);
 
     public static interface AuthorNameAge {
-
         String getName();
-
         int getAge();
     }
 }
