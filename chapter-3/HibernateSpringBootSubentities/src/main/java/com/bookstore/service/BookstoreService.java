@@ -3,12 +3,13 @@ package com.bookstore.service;
 import com.bookstore.entity.AuthorDeep;
 import com.bookstore.entity.AuthorShallow;
 import com.bookstore.repository.AuthorDeepRepository;
+import com.bookstore.repository.AuthorShallowRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import com.bookstore.repository.AuthorShallowRepository;
 import java.util.List;
 
 @Service
@@ -17,8 +18,7 @@ public class BookstoreService {
     private final AuthorShallowRepository authorShallowRepository;
     private final AuthorDeepRepository authorDeepRepository;
 
-    public BookstoreService(AuthorShallowRepository authorShallowRepository,
-            AuthorDeepRepository authorDeepRepository) {
+    public BookstoreService(AuthorShallowRepository authorShallowRepository, AuthorDeepRepository authorDeepRepository) {
         this.authorShallowRepository = authorShallowRepository;
         this.authorDeepRepository = authorDeepRepository;
     }
@@ -53,14 +53,10 @@ public class BookstoreService {
     }
 
     public List<AuthorShallow> fetchAuthorsShallow() {
-        List<AuthorShallow> authors = authorShallowRepository.findAll();
-
-        return authors;
+        return authorShallowRepository.findAll();
     }
 
     public List<AuthorDeep> fetchAuthorsDeep() {
-        List<AuthorDeep> authors = authorDeepRepository.findAll();
-
-        return authors;
+        return authorDeepRepository.findAll();
     }
 }

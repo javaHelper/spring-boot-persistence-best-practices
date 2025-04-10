@@ -1,5 +1,7 @@
 
 **[Attributes Lazy Loading Via Subentities](https://github.com/AnghelLeonard/Hibernate-SpringBoot/tree/master/HibernateSpringBootSubentities)**
+
+# This is much better option that LazyLoadingBasic and LazyLoadingBasicDefault
  
 **Description:** By default, the attributes of an entity are loaded eager (all at once). This application is an alternative to *How To Use Hibernate Attribute Lazy Loading* from [here](https://github.com/AnghelLeonard/Hibernate-SpringBoot/tree/master/HibernateSpringBootAttributeLazyLoadingBasic). This application uses a base class to isolate the attributes that should be loaded eagerly and subentities (entities that extends the base class) for isolating the attributes that should be loaded on demand.
 
