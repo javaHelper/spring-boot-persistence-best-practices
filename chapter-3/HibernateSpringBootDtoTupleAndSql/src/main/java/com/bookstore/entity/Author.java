@@ -1,10 +1,11 @@
 package com.bookstore.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
 public class Author implements Serializable {
@@ -53,7 +54,6 @@ public class Author implements Serializable {
 
     @Override
     public String toString() {
-        return "Author{" + "id=" + id + ", age=" + age
-                + ", name=" + name + ", genre=" + genre + '}';
+        return "Author{" + "id=" + id + ", age=" + age + ", name=" + name + ", genre=" + genre + '}';
     }
 }
