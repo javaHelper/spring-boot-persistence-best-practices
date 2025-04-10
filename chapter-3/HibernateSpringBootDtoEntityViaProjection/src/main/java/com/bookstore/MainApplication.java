@@ -24,7 +24,6 @@ public class MainApplication {
     @Bean
     public ApplicationRunner init() {
         return args -> {
-
             List<BookstoreDto> authors = bookstoreService.fetchAuthors();
             authors.forEach(a -> System.out.println(a.getAuthor() + ", Title: " + a.getTitle()));
         };
