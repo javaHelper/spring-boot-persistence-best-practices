@@ -24,14 +24,11 @@ public class MainApplication {
     @Bean
     public ApplicationRunner init() {
         return args -> {
-
             List<AuthorDto> authors = bookstoreService.fetchByGenre();
-
             System.out.println("Number of authors:" + authors.size());
 
             for (AuthorDto author : authors) {
-                System.out.println("Author name: " + author.getName()
-                        + " | Age: " + author.getAge());
+                System.out.println("Author name: " + author.getName() + " | Age: " + author.getAge());
             }
         };
     }
