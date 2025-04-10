@@ -1,8 +1,9 @@
 package com.bookstore.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
 public class Book implements Serializable {
@@ -50,7 +51,6 @@ public class Book implements Serializable {
 
     @Override
     public String toString() {
-        return "Book{" + "id=" + id + ", title=" + title
-                + ", isbn=" + isbn + ", genre=" + genre + '}';
+        return "Book{" + "id=" + id + ", title=" + title + ", isbn=" + isbn + ", genre=" + genre + '}';
     }
 }
