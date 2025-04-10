@@ -14,14 +14,12 @@ public class BookstoreService {
     private final AuthorRepository authorRepository;
 
     public BookstoreService(AuthorRepository authorRepository) {
-
         this.authorRepository = authorRepository;
     }
 
     @Transactional(readOnly = true)
     public void fetchAuthorByNameAsEntityJpql() {
         Author author = authorRepository.findByName("Joana Nimar", Author.class);
-
         System.out.println(author);
     }
 
