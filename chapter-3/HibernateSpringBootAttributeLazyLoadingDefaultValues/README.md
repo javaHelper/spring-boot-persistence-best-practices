@@ -1,5 +1,10 @@
 
 **[Default Values For Lazy Loaded Attributes](https://github.com/AnghelLeonard/Hibernate-SpringBoot/tree/master/HibernateSpringBootAttributeLazyLoadingDefaultValues)**
+
+
+````
+
+````
  
 <b><a href="https://persistencelayer.wixsite.com/springboot-hibernate/post/how-to-set-default-values-for-lazy-loaded-attributes">If you prefer to read it as a blog-post containing the relevant snippets of code then check this post</a></b>
 

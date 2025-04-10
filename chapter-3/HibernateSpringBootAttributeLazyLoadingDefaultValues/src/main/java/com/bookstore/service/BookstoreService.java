@@ -2,9 +2,11 @@ package com.bookstore.service;
 
 import com.bookstore.repository.AuthorRepository;
 import com.bookstore.entity.Author;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -49,13 +51,11 @@ public class BookstoreService {
     @Transactional(readOnly = true)
     public Author fetchAuthor(long id) {
         Author author = authorRepository.findById(id).orElseThrow();
-
         if (author.getAge() < 40) {
             author.getAvatar();
         } else {
             author.setAvatar(null);
         }
-
         return author;
     }
 }

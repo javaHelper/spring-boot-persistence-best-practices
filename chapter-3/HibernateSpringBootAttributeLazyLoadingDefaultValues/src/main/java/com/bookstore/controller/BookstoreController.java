@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BookstoreController {
-
     private final BookstoreService bookstoreService;
 
     public BookstoreController(BookstoreService bookstoreService) {
@@ -19,5 +18,4 @@ public class BookstoreController {
     public Author fetchAuthors(@PathVariable long id) {
         return bookstoreService.fetchAuthor(id);
     }
-
 }

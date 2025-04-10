@@ -2,12 +2,15 @@ package com.bookstore.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import jakarta.persistence.Basic;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+
 import java.io.Serializable;
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+
 
 @Entity
 @JsonInclude(Include.NON_DEFAULT)
@@ -18,6 +21,7 @@ public class Author implements Serializable {
     @Id
     private Long id;
 
+    @Column(columnDefinition = "LONGBLOB")
     @Lob
     @Basic(fetch = FetchType.LAZY)
     private byte[] avatar;
