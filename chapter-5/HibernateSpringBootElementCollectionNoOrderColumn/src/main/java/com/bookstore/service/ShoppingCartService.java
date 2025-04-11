@@ -17,21 +17,18 @@ public class ShoppingCartService {
     @Transactional
     public void addToTheBeginning() {
         ShoppingCart cart = shoppingCartRepository.findByOwner("Mark Juno");
-
         cart.getBooks().add(0, "Modern history");
     }
 
     @Transactional
     public void addToTheEnd() {
         ShoppingCart cart = shoppingCartRepository.findByOwner("Mark Juno");
-
         cart.getBooks().add("The last day");
     }
 
     @Transactional
     public void addInTheMiddle() {
         ShoppingCart cart = shoppingCartRepository.findByOwner("Mark Juno");
-
         cart.getBooks().add(cart.getBooks().size() / 2, "Middle man");
     }
 

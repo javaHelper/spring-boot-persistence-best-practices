@@ -41,7 +41,6 @@ public class MainApplication {
             
             System.out.println("\nRemove middle book from the cart ...");
             shoppingCartService.removeMiddle();
-            
         };
     }
 }
