@@ -3,8 +3,9 @@ package com.bookstore.dao;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,9 +48,7 @@ public class Dao<T, ID extends Serializable> implements GenericDao<T, ID> {
         }
 
         if (i > 0) {
-            logger.log(Level.INFO,
-                    "Flushing the remaining {0} entities ...", i);
-
+            logger.log(Level.INFO, "Flushing the remaining {0} entities ...", i);
             entityManager.flush();
             entityManager.clear();
         }
