@@ -16,12 +16,10 @@ public class BookstoreService {
     }
 
     public List<AuthorDtoNoSetters> fetchAuthorsNoSetters() {
-
         return dao.fetchAuthorsNoSetters();
     }
     
     public List<AuthorDtoWithSetters> fetchAuthorsWithSetters() {
-
         return dao.fetchAuthorsWithSetters();
     }
 }
