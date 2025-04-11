@@ -17,9 +17,7 @@ public class BookstoreService {
     }
 
     public void persistAuthors() {
-
         List<Author> authors = new ArrayList<>();
-
         for (int i = 0; i < 100; i++) {
             Author author = new Author();
             author.setName("Name_" + i);
