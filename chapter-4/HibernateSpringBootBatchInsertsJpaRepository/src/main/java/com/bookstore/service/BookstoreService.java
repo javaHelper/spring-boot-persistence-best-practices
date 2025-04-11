@@ -20,7 +20,6 @@ public class BookstoreService {
     }
 
     public void batchAuthors() {
-
         List<Author> authors = new ArrayList<>();
 
         for (int i = 0; i < 1000; i++) {
@@ -38,7 +37,7 @@ public class BookstoreService {
             }
         }
 
-        if (authors.size() > 0) {
+        if (!authors.isEmpty()) {
             authorRepository.saveAll(authors);
             authors.clear();
         }
