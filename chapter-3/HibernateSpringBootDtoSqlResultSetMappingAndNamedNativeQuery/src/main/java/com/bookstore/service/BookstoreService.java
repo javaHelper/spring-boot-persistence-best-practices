@@ -15,12 +15,10 @@ public class BookstoreService {
     }
 
     public List<AuthorDto> fetchAuthorsNamesAndAges() {
-
         return authorRepository.fetchNameAndAge();
     }
     
     public List<String> fetchAuthorsNames() {
-
         return authorRepository.fetchName();
     }
 }

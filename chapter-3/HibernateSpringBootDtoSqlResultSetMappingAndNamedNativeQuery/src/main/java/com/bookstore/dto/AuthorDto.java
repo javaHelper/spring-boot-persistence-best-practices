@@ -2,6 +2,7 @@ package com.bookstore.dto;
 
 import java.io.Serializable;
 
+
 public class AuthorDto implements Serializable {
 
     private static final long serialVersionUID = 1L;
