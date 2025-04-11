@@ -1,10 +1,6 @@
 Manifest-Version: 1.0
-Built-By: prateekashtikar
-Build-Jdk: 21.0.5
+Build-Jdk-Spec: 21
 Implementation-Title: HibernateSpringBootBatchJsonFileForkJoin
 Implementation-Version: 1.0
-Implementation-Vendor-Id: com.jpa
-Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
- -starter-parent/HibernateSpringBootBatchJsonFileForkJoin
 Created-By: Maven Integration for Eclipse
 
