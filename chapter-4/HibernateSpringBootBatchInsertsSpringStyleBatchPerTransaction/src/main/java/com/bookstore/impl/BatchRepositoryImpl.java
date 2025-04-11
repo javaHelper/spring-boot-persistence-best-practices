@@ -2,7 +2,8 @@ package com.bookstore.impl;
 
 import java.io.Serializable;
 import java.util.logging.Logger;
-import javax.persistence.EntityManager;
+
+import jakarta.persistence.EntityManager;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.transaction.annotation.Propagation;
