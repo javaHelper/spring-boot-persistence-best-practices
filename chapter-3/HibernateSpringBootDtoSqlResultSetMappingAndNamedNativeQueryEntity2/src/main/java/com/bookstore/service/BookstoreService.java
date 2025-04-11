@@ -15,12 +15,10 @@ public class BookstoreService {
     }
 
     public List<Author> fetchAuthors() {
-
         return authorRepository.fetchAll();
     }
 
     public List<Object[]> fetchAuthorWithBook() {
-        
         return authorRepository.fetchWithBook();
     }
 }
