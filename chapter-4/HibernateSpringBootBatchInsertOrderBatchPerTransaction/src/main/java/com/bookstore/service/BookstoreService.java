@@ -17,12 +17,10 @@ public class BookstoreService {
     }
 
     public void batchAuthorsAndBooks() {
-
         List<Author> authors = new ArrayList<>();
 
         long pk = 0;
         for (int i = 0; i < 40; i++) {
-
             Author author = new Author();
             author.setId((long) i + 1);
             author.setName("Name_" + i);
