@@ -11,7 +11,6 @@ public class BookstoreService {
     private final AuthorRepository authorRepository;
 
     public BookstoreService(AuthorRepository authorRepository) {
-
         this.authorRepository = authorRepository;
     }
 
