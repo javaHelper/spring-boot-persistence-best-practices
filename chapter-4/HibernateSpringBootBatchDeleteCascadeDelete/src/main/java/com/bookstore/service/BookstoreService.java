@@ -22,7 +22,6 @@ public class BookstoreService {
         List<Author> authors = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-
             Author author = new Author();
             author.setName("Name_" + i);
             author.setGenre("Genre_" + i);
