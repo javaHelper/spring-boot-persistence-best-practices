@@ -1,15 +1,16 @@
 package com.bookstore.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
 public class Author implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Id    
+    @Id
     private Long id;
 
     private String name;

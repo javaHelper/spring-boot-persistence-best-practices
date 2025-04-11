@@ -6,7 +6,8 @@ import java.io.Serializable;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.EntityManager;
+
+import jakarta.persistence.EntityManager;
 import org.hibernate.dialect.Dialect;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
@@ -63,8 +64,8 @@ public class BatchRepositoryImpl<T, ID extends Serializable>
 
     private static int batchSize() {
 
-        int batchsize = Integer.valueOf(Dialect.DEFAULT_BATCH_SIZE); // default batch size
-
+       // int batchsize = Integer.valueOf(Dialect.DEFAULT_BATCH_SIZE); // default batch size
+        int batchsize = 30;
         Properties configuration = new Properties();
         try ( InputStream inputStream = BatchRepositoryImpl.class.getClassLoader()
                 .getResourceAsStream("application.properties")) {
@@ -75,12 +76,10 @@ public class BatchRepositoryImpl<T, ID extends Serializable>
             return batchsize;
         }
 
-        String batchsizestr = configuration.getProperty(
-                "spring.jpa.properties.hibernate.jdbc.batch_size");
+        String batchsizestr = configuration.getProperty("spring.jpa.properties.hibernate.jdbc.batch_size");
         if (batchsizestr != null) {
-            batchsize = Integer.valueOf(batchsizestr);
+            batchsize = Integer.parseInt(batchsizestr);
         }
-
         return batchsize;
     }
 }
