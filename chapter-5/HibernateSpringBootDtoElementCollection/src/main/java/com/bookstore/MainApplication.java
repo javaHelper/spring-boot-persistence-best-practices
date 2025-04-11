@@ -28,15 +28,13 @@ public class MainApplication {
             System.out.println("Fetch shopping cart ...");
             List<ShoppingCartDto> sc1 = shoppingCartService.allShoppingCart();
             sc1.forEach(a -> {
-                System.out.println("\nOwner: " + a.getOwner()
-                        + " Title: " + a.getTitle() + " Price: " + a.getPrice());
+                System.out.println("\nOwner: " + a.getOwner() + " Title: " + a.getTitle() + " Price: " + a.getPrice());
             });
             
             System.out.println("\nFetch shopping cart by price ...");
             List<ShoppingCartDto> sc2 = shoppingCartService.byPriceShoppingCart();
             sc2.forEach(a -> {
-                System.out.println("\nOwner: " + a.getOwner()
-                        + " Title: " + a.getTitle() + " Price: " + a.getPrice());
+                System.out.println("\nOwner: " + a.getOwner() + " Title: " + a.getTitle() + " Price: " + a.getPrice());
             });
         };
     }
