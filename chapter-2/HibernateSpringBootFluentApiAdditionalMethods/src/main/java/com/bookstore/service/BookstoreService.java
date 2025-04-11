@@ -33,9 +33,7 @@ public class BookstoreService {
 
     @Transactional(readOnly = true)
     public void displayAuthorWithBooks() {
-
         Author author = authorRepository.findByName("Joana Nimar");
-
         System.out.println(author + "  Books: " + author.getBooks());
     }
 }
