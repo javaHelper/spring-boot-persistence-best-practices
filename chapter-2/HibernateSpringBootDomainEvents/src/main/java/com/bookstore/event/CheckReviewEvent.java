@@ -13,5 +13,4 @@ public class CheckReviewEvent {
     public BookReview getBookReview() {
         return bookReview;
     }
-        
 }
