@@ -13,7 +13,8 @@ public class SimpleJdbcInsertDao implements AuthorDao {
 
     public SimpleJdbcInsertDao(DataSource dataSource) {
         this.simpleJdbcInsert = new SimpleJdbcInsert(dataSource)
-                .withTableName("author").usingGeneratedKeyColumns("id");
+                .withTableName("author")
+                .usingGeneratedKeyColumns("id");
     }
 
     @Override
