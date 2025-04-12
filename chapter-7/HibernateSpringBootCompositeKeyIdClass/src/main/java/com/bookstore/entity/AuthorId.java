@@ -1,8 +1,9 @@
 package com.bookstore.entity;
 
+import jakarta.persistence.Column;
+
 import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.Column;
 
 public class AuthorId implements Serializable {
 
