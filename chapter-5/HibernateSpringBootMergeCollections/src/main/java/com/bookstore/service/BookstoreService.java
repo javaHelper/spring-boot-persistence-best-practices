@@ -15,15 +15,12 @@ public class BookstoreService {
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
 
-    public BookstoreService(AuthorRepository authorRepository,
-            BookRepository bookRepository) {
-
+    public BookstoreService(AuthorRepository authorRepository, BookRepository bookRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
     }
 
     public List<Book> fetchBooksOfAuthor(String name) {
-
         return bookRepository.booksOfAuthor(name);
     }
 
@@ -37,26 +34,25 @@ public class BookstoreService {
         // longer found in the incoming collection (detachedBooks)
         List<Book> booksToRemove  = author.getBooks().stream()
                 .filter(b -> !detachedBooks.contains(b))
-                .collect(Collectors.toList());
-        booksToRemove .forEach(b -> author.removeBook(b));
+                .toList();
+        booksToRemove .forEach(author::removeBook);
 
         // Update the existing database rows which can be found 
         // in the incoming collection (detachedBooks)
         List<Book> newBooks = detachedBooks.stream()
                 .filter(b -> !author.getBooks().contains(b))
-                .collect(Collectors.toList());
+                .toList();
 
         detachedBooks.stream()
                 .filter(b -> !newBooks.contains(b))
                 .forEach((b) -> {
                     b.setAuthor(author);
                     Book mergedBook = bookRepository.save(b);
-                    author.getBooks().set(
-                            author.getBooks().indexOf(mergedBook), mergedBook);
+                    author.getBooks().set(author.getBooks().indexOf(mergedBook), mergedBook);
                 });
 
         // Add the rows found in the incoming collection, 
         // which cannot be found in the current database snapshot
-        newBooks.forEach(b -> author.addBook(b));
+        newBooks.forEach(author::addBook);
     }
 }

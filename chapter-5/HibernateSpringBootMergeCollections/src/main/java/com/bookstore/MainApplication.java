@@ -28,7 +28,7 @@ public class MainApplication {
             System.out.println("\n------------------- Joana Nimar's Books --------------------");
             List<Book> detachedBooks = bookstoreService.fetchBooksOfAuthor("Joana Nimar");
 
-            detachedBooks.forEach(b -> System.out.println(b));
+            detachedBooks.forEach(System.out::println);
 
             System.out.println("\n---------- Books of Joana Nimar updated in detached state------------");
 
@@ -44,7 +44,7 @@ public class MainApplication {
             book.setIsbn("005-JN");
             detachedBooks.add(book);
 
-            detachedBooks.forEach(b -> System.out.println(b));
+            detachedBooks.forEach(System.out::println);
             
             System.out.println("\n----------------- Merging books of Joana Nimar ----------------");
             bookstoreService.updateBooksOfAuthor("Joana Nimar", detachedBooks);
@@ -52,7 +52,7 @@ public class MainApplication {
             System.out.println("\n----------------- Books of Joana Nimar After Merge ----------------");
             List<Book> books = bookstoreService.fetchBooksOfAuthor("Joana Nimar");
             
-            books.forEach(b -> System.out.println(b));
+            books.forEach(System.out::println);
         };
     }
 }
