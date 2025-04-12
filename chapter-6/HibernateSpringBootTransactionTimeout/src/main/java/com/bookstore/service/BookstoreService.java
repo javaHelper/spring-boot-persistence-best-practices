@@ -16,7 +16,6 @@ public class BookstoreService {
 
     @Transactional(timeout = 10)
     public void newAuthor() {
-        
         Author author = new Author();
         author.setAge(23);
         author.setGenre("Anthology");
