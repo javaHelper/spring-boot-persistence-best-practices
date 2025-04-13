@@ -16,16 +16,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DatasourceProxyBeanPostProcessor implements BeanPostProcessor {
 
-    private static final Logger logger
-            = Logger.getLogger(DatasourceProxyBeanPostProcessor.class.getName());
+    private static final Logger logger = Logger.getLogger(DatasourceProxyBeanPostProcessor.class.getName());
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) {
 
         if (bean instanceof DataSource) {
-
             logger.info(() -> "DataSource bean has been found: " + bean);
-
             final ProxyFactory proxyFactory = new ProxyFactory(bean);
 
             proxyFactory.setProxyTargetClass(true);

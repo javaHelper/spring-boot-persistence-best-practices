@@ -15,7 +15,6 @@ public class BookstoreService {
     }
 
     public void updateAuthorWithoutTransactional() {
-
         Author author = authorRepository.findById(1L).orElseThrow();
         author.setGenre("History");
 
