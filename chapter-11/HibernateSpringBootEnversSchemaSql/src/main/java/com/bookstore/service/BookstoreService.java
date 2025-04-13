@@ -1,24 +1,23 @@
 package com.bookstore.service;
 
-import com.bookstore.repository.BookRepository;
-import com.bookstore.repository.AuthorRepository;
-import java.util.logging.Logger;
-import javax.persistence.EntityManager;
 import com.bookstore.entity.Author;
 import com.bookstore.entity.Book;
-import java.util.List;
-import org.hibernate.Session;
+import com.bookstore.repository.AuthorRepository;
+import com.bookstore.repository.BookRepository;
+import jakarta.persistence.EntityManager;
 import org.hibernate.envers.AuditReader;
 import org.hibernate.envers.AuditReaderFactory;
 import org.hibernate.envers.query.AuditQuery;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.logging.Logger;
+
 @Service
 public class BookstoreService {
 
-    private static final Logger logger
-            = Logger.getLogger(BookstoreService.class.getName());
+    private static final Logger logger = Logger.getLogger(BookstoreService.class.getName());
 
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
