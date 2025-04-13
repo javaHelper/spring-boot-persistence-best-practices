@@ -24,9 +24,7 @@ public class BookstoreService {
     }
     
     public void displayAuthor() {
-        
         Author author = authorRepository.findByName("Joana Nimar");
-        
         System.out.println(author);
     }
 }
