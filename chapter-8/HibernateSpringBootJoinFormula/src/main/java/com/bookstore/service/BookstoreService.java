@@ -11,14 +11,12 @@ public class BookstoreService {
     private final BookRepository bookRepository;
 
     public BookstoreService(BookRepository bookRepository) {
-
         this.bookRepository = bookRepository;
     }
 
     @Transactional(readOnly = true)
     public void fetchBooks() {
-
-        Book book = bookRepository.findById(7L).orElseThrow(() -> new RuntimeException());
+        Book book = bookRepository.findById(7L).orElseThrow(RuntimeException::new);
         Book nextBook = book.getNextBook();
 
         System.out.println("Fetched book with id 7: " + book);
