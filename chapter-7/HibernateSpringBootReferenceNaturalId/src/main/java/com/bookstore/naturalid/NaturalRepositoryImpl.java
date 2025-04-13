@@ -3,8 +3,9 @@ package com.bookstore.naturalid;
 import java.io.Serializable;
 import java.util.Map;
 import java.util.Optional;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.hibernate.NaturalIdLoadAccess;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
