@@ -9,8 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class BookstoreService {
 
-    private static final Logger logger
-            = Logger.getLogger(BookstoreService.class.getName());
+    private static final Logger logger = Logger.getLogger(BookstoreService.class.getName());
 
     private final BookRepository bookRepository;
 
