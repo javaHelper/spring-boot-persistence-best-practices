@@ -16,8 +16,7 @@ public class NaturalRepositoryImpl<T, ID extends Serializable>
 
     private final EntityManager entityManager;
 
-    public NaturalRepositoryImpl(JpaEntityInformation entityInformation,
-            EntityManager entityManager) {
+    public NaturalRepositoryImpl(JpaEntityInformation entityInformation, EntityManager entityManager) {
         super(entityInformation, entityManager);
 
         this.entityManager = entityManager;
