@@ -24,9 +24,7 @@ public class BookstoreService {
     }
     
     public void displayAuthor() {
-        
         Author author = authorRepository.findById(1L).orElseThrow();
-        
         System.out.println(author);
     }
 }
