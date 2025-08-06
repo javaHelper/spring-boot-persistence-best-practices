@@ -6,9 +6,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.PostLoad;
 import jakarta.persistence.Transient;
+import lombok.Data;
 
 import java.io.Serializable;
- 
+
+@Data
 @Entity
 public class Book implements Serializable {
 
@@ -25,50 +27,8 @@ public class Book implements Serializable {
     @Transient
     private double discounted;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public double getDiscounted() {
-        return discounted;
-    }
-
     @PostLoad
     private void postLoad() {
-        this.discounted = this.price - this.price * 0.25; 
+        this.discounted = this.price - this.price * 0.25;
     }
-
-    @Override
-    public String toString() {
-        return "Book{" + "id=" + id + ", title=" + title + ", isbn=" 
-                + isbn + ", price=" + price + ", discounted=" + discounted + '}';
-    }        
 }
