@@ -19,6 +19,7 @@ public class BookstoreService {
         Book book = bookRepository.findById(7L).orElseThrow(RuntimeException::new);
         Book nextBook = book.getNextBook();
 
+        System.out.println("-------------------------------------------------");
         System.out.println("Fetched book with id 7: " + book);
         System.out.println("Fetched book with next smallest price: " + nextBook);
     }
