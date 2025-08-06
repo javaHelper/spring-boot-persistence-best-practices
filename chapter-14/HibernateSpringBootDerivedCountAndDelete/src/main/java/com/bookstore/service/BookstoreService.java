@@ -15,17 +15,14 @@ public class BookstoreService {
     }
 
     public long countByGenre() {
-
         return authorRepository.countByGenre("Anthology");
     }
 
     public long deleteByGenre() {
-
         return authorRepository.deleteByGenre("History");
     }
 
     public List<Author> removeByGenre() {
-
         return authorRepository.removeByGenre("Horror");
     }
 }
