@@ -16,7 +16,6 @@ public class BookstoreService {
 
     public void persistNewAuthor() {
         Author author = new Author();
-
         author.setName("Maryus Yarn");
         author.setAge(34);
         author.setGenre(GenreType.HORROR);
