@@ -11,8 +11,7 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 @Service
 public class BookstoreService {
 
-    private static final Logger logger
-            = Logger.getLogger(BookstoreService.class.getName());
+    private static final Logger logger = Logger.getLogger(BookstoreService.class.getName());
 
     private final AuthorRepository authorRepository;
 
@@ -23,8 +22,7 @@ public class BookstoreService {
     @Transactional
     public void updateAuthor() {
 
-        TransactionSynchronizationManager.registerSynchronization(
-                new TransactionSynchronizationAdapter() {
+        TransactionSynchronizationManager.registerSynchronization(new TransactionSynchronizationAdapter() {
             @Override
             public void afterCommit() {
                 logger.info(() -> "Long running task right after commit ...");
@@ -33,8 +31,7 @@ public class BookstoreService {
                 // return to pool connection until this code is done
                 // So, avoid time-consuming tasks here                 
                 try {
-                    // This sleep() is just proof that the connection is not released
-                    // Check HikariCP log ()
+                    // This sleep() is just proof that the connection is not released Check HikariCP log ()
                     Thread.sleep(60 * 1000);
                 } catch (InterruptedException ex) {
                     Thread.currentThread().interrupt();
