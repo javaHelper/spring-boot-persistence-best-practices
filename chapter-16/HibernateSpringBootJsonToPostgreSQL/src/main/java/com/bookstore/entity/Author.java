@@ -1,20 +1,19 @@
 package com.bookstore.entity;
 
 import com.bookstore.obj.Book;
-import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
-import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Data;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
+import java.io.Serializable;
+
+@Data
 @Entity
-@TypeDef(
-        name = "jsonb", typeClass = JsonBinaryType.class
-)
 public class Author implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -27,53 +26,7 @@ public class Author implements Serializable {
     private String genre;
     private int age;
 
-    @Type(type = "jsonb")
-    @Column(columnDefinition = "jsonb") // or, json
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(columnDefinition = "jsonb") // or "json" if you're not using PostgreSQL
     private Book book;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Book getBook() {
-        return book;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    @Override
-    public String toString() {
-        return "Author{" + "id=" + id + ", name=" + name
-                + ", genre=" + genre + ", age=" + age + ", book=" + book + '}';
-    }
 }
