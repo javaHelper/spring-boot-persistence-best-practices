@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface ScreenshotRepository extends JpaRepository<Screenshot, Long> {
-    
-    @Transactional(readOnly=true)
+
+    @Transactional(readOnly = true)
     public Screenshot findByName(String name);
 }

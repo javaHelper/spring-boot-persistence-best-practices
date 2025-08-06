@@ -23,21 +23,18 @@ public class ScreenshotService {
         Screenshot screenshot = new Screenshot();
 
         screenshot.setName("Screenshot-1");
-        screenshot.setCreateOn(new Timestamp(
-                ZonedDateTime.of(2018, 3, 30, 10, 15, 55, 0,
-                        ZoneId.of("UTC")
-                ).toInstant().toEpochMilli()
-        ));
+        long utc = ZonedDateTime.of(2018, 3, 30, 10, 15, 55, 0, ZoneId.of("UTC"))
+                .toInstant()
+                .toEpochMilli();
+        screenshot.setCreateOn(new Timestamp(utc));
 
-        System.out.println("Timestamp epoch milliseconds before insert: "
-                + screenshot.getCreateOn().getTime());
+        System.out.println("Timestamp epoch milliseconds before insert: " + screenshot.getCreateOn().getTime());
 
         screenshotRepository.save(screenshot);
     }
 
     public void displayScreenshotInUTC() {
         Screenshot fetchScreenshot = screenshotRepository.findByName("Screenshot-1");
-        System.out.println("Timestamp epoch milliseconds after fetching: "
-                + fetchScreenshot.getCreateOn().getTime());
+        System.out.println("Timestamp epoch milliseconds after fetching: " + fetchScreenshot.getCreateOn().getTime());
     }
 }
