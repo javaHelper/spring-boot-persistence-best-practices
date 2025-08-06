@@ -20,7 +20,6 @@ public class BookstoreService {
         author.setName("Joana Nimar");
         author.setGenre("History");
         author.setAge(34);
-
         authorRepository.save(author);
     }
 }
