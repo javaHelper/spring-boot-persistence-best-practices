@@ -2,8 +2,8 @@ package com.bookstore.service;
 
 import com.bookstore.entity.Inventory;
 import com.bookstore.repository.InventoryRepository;
-import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class InventoryService {
@@ -15,9 +15,7 @@ public class InventoryService {
     }
 
     public Inventory firstTransactionFetchesAndReturn() {
-        Inventory firstInventory = inventoryRepository.findById(1L).orElseThrow();
-
-        return firstInventory;
+        return inventoryRepository.findById(1L).orElseThrow();
     }       
     
     @Transactional
