@@ -23,7 +23,9 @@ public class MainApplication {
     @Bean
     public ApplicationRunner init() {
         return args -> {
-            bookstoreService.insertBook();                                   
+            bookstoreService.insertBook();
+
+            System.out.println("-------------");
             bookstoreService.updateBook();                                   
         };
     }

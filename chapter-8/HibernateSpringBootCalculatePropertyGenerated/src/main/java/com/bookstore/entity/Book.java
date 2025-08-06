@@ -7,9 +7,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
+@Data
 @Entity
 public class Book implements Serializable {
 
@@ -26,46 +28,4 @@ public class Book implements Serializable {
     @Generated(value = GenerationTime.ALWAYS)
     @Column(insertable = false, updatable = false /*, columnDefinition = "double AS (price - price * 0.25)"*/)
     private double discounted;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public double getDiscounted() {
-        return discounted;
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" + "id=" + id + ", title=" + title + ", isbn="
-                + isbn + ", price=" + price + ", discounted=" + discounted + '}';
-    }
 }
