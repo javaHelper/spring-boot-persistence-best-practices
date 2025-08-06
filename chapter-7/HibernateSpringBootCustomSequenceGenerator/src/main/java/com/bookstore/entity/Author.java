@@ -1,23 +1,27 @@
 package com.bookstore.entity;
 
 import com.bookstore.generator.id.CustomSequenceIdGenerator;
+
+import java.io.Serial;
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
 @Entity
 public class Author implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hilopooledlo")
     @GenericGenerator(name = "hilopooledlo", 
-            strategy = "com.bookstore.generator.id.StringPrefixedSequenceIdGenerator",
+            strategy = "com.bookstore.generator.id.CustomSequenceIdGenerator",
             parameters = {
                 @Parameter(name = CustomSequenceIdGenerator.SEQUENCE_PARAM, value = "hilo_sequence"),
                 @Parameter(name = CustomSequenceIdGenerator.INITIAL_PARAM, value = "1"),                
