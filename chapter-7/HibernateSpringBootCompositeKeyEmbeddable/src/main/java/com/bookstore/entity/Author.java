@@ -4,12 +4,14 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+@Data
 @Entity
 public class Author implements Serializable {
 
@@ -43,34 +45,5 @@ public class Author implements Serializable {
             book.setAuthor(null);
             iterator.remove();
         }
-    }
-
-    public AuthorId getId() {
-        return id;
-    }
-
-    public void setId(AuthorId id) {
-        this.id = id;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
-
-    @Override
-    public String toString() {
-        return "Author{" + "id=" + id + ", genre=" + genre + '}';
     }
 }

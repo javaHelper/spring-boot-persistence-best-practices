@@ -2,10 +2,12 @@ package com.bookstore.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@Data
 @Embeddable
 public class AuthorId implements Serializable {
 
@@ -23,14 +25,6 @@ public class AuthorId implements Serializable {
     public AuthorId(String name, int age) {
         this.name = name;
         this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     @Override
