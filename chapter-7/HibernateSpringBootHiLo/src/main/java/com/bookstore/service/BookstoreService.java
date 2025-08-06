@@ -16,13 +16,11 @@ public class BookstoreService {
     }
 
     public void batch1000Authors() {
-
         List<Author> authors = new ArrayList<>();
 
         for (int i = 1; i <= 1000; i++) {
             Author author = new Author();
             author.setName("Author_" + i);
-
             authors.add(author);
         }
 
