@@ -1,22 +1,14 @@
 package com.bookstore.entity;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedAttributeNode;
-import javax.persistence.NamedEntityGraph;
-import javax.persistence.OneToMany;
 
 @Entity
-@NamedEntityGraph(
-  name = "author-books-graph",
-  attributeNodes = {  
+@NamedEntityGraph(name = "author-books-graph", attributeNodes = {
     @NamedAttributeNode("books")
   }
 )

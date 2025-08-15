@@ -1,12 +1,14 @@
 package com.bookstore.service;
 
-import com.bookstore.repository.AuthorRepository;
 import com.bookstore.entity.Author;
 import com.bookstore.entity.Book;
+import com.bookstore.repository.AuthorRepository;
 import com.bookstore.repository.BookRepository;
-import static com.bookstore.specs.AuthorSpecs.isAgeGt45;
-import java.util.List;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+import static com.bookstore.specs.AuthorSpecs.isAgeGt45;
 
 @Service
 public class BookstoreService {
@@ -14,21 +16,17 @@ public class BookstoreService {
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
 
-    public BookstoreService(AuthorRepository authorRepository,
-            BookRepository bookRepository) {
-
+    public BookstoreService(AuthorRepository authorRepository, BookRepository bookRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
     }
 
     public void displayAuthorsAndBooks() {
-
         List<Author> authors = authorRepository.findAll();
 
         for (Author author : authors) {
             System.out.println("Author: " + author);
-            System.out.println("No of books: "
-                    + author.getBooks().size() + ", " + author.getBooks());
+            System.out.println("No of books: " + author.getBooks().size() + ", " + author.getBooks());
         }
     }
 
