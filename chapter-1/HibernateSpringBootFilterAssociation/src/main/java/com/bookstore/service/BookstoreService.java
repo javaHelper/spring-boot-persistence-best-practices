@@ -1,11 +1,12 @@
 package com.bookstore.service;
 
-import com.bookstore.repository.AuthorRepository;
 import com.bookstore.entity.Author;
 import com.bookstore.entity.Book;
-import java.util.List;
+import com.bookstore.repository.AuthorRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class BookstoreService {
@@ -20,7 +21,7 @@ public class BookstoreService {
     @Transactional(readOnly = true)
     public void fetchAuthorWithAllBooks() {
 
-        Author author = authorRepository.findById(1L).orElseThrow();
+        Author author = authorRepository.findById(1L).orElseThrow(() -> new RuntimeException(""));
         List<Book> books = author.getBooks();
 
         System.out.println(books);
@@ -29,7 +30,7 @@ public class BookstoreService {
     @Transactional(readOnly = true)
     public void fetchAuthorWithCheapBooks() {
 
-        Author author = authorRepository.findById(1L).orElseThrow();
+        Author author = authorRepository.findById(1L).orElseThrow(() -> new RuntimeException(""));
         List<Book> books = author.getCheapBooks();
 
         System.out.println(books);
@@ -38,7 +39,7 @@ public class BookstoreService {
     @Transactional(readOnly = true)
     public void fetchAuthorWithRestOfBooks() {
 
-        Author author = authorRepository.findById(1L).orElseThrow();
+        Author author = authorRepository.findById(1L).orElseThrow(() -> new RuntimeException(""));
         List<Book> books = author.getRestOfBooks();
 
         System.out.println(books);
