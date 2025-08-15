@@ -1,10 +1,11 @@
 package com.bookstore.service;
 
-import com.bookstore.repository.AuthorRepository;
 import com.bookstore.entity.Author;
 import com.bookstore.entity.Book;
-import java.util.List;
+import com.bookstore.repository.AuthorRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class BookstoreService {
@@ -12,12 +13,10 @@ public class BookstoreService {
     private final AuthorRepository authorRepository;
 
     public BookstoreService(AuthorRepository authorRepository) {
-
         this.authorRepository = authorRepository;
     }
 
     public void displayAuthorsAndBooksByGenreAndAge(String genre, int age) {
-
         List<Author> authors = authorRepository.findByGenreAndAgeGreaterThan(genre, age);
 
         for (Author author : authors) {
@@ -31,7 +30,6 @@ public class BookstoreService {
     }
 
     public void displayAuthorsAndBooksByAgeAndGenre(int age, String genre) {
-
         List<Author> authors = authorRepository.findByAgeGreaterThanAndGenre(age, genre);
 
         for (Author author : authors) {
