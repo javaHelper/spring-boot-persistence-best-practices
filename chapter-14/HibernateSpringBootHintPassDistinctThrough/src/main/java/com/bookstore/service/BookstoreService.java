@@ -1,9 +1,10 @@
 package com.bookstore.service;
 
-import com.bookstore.repository.AuthorRepository;
 import com.bookstore.entity.Author;
-import java.util.List;
+import com.bookstore.repository.AuthorRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class BookstoreService {
@@ -16,7 +17,6 @@ public class BookstoreService {
 
     public void fetchWithDuplicates() {
         System.out.println("\nFetching authors with duplicates ...");
-
         List<Author> authors = authorRepository.fetchWithDuplicates();
 
         authors.forEach(a -> {
@@ -26,7 +26,6 @@ public class BookstoreService {
 
     public void fetchWithoutHint() {
         System.out.println("\nFetching authors without HINT_PASS_DISTINCT_THROUGH hint ...");
-
         List<Author> authors = authorRepository.fetchWithoutHint();
 
         authors.forEach(a -> {
@@ -36,11 +35,10 @@ public class BookstoreService {
 
     public void fetchWithHint() {
         System.out.println("\nFetching authors with HINT_PASS_DISTINCT_THROUGH hint ...");
-
         List<Author> authors = authorRepository.fetchWithHint();
 
         authors.forEach(a -> {
             System.out.println("Id: " + a.getId() + ": Name: " + a.getName() + " Books: " + a.getBooks());
         });
-    }       
+    }
 }
