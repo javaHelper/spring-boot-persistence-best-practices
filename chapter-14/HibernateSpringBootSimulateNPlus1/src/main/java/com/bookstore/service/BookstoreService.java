@@ -1,29 +1,24 @@
 package com.bookstore.service;
 
-import com.bookstore.repository.BookRepository;
-import com.bookstore.repository.AuthorRepository;
 import com.bookstore.entity.Author;
 import com.bookstore.entity.Book;
-import java.util.List;
+import com.bookstore.repository.AuthorRepository;
+import com.bookstore.repository.BookRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
+@RequiredArgsConstructor
 @Service
 public class BookstoreService {
 
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
-
-    public BookstoreService(AuthorRepository authorRepository,
-            BookRepository bookRepository) {
-
-        this.authorRepository = authorRepository;
-        this.bookRepository = bookRepository;
-    }
     
     @Transactional(readOnly = true)
     public void fetchBooksAndAuthors() {
-
         List<Book> books = bookRepository.findAll();
 
         for (Book book : books) {
@@ -34,7 +29,6 @@ public class BookstoreService {
     
     @Transactional(readOnly = true)
     public void fetchAuthorsAndBooks() {
-
         List<Author> authors = authorRepository.findAll();
 
         for (Author author: authors) {
