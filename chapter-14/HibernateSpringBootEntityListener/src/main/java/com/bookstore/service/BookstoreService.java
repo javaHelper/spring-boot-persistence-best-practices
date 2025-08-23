@@ -5,25 +5,18 @@ import com.bookstore.entity.Author;
 import com.bookstore.entity.Paperback;
 import com.bookstore.entity.Ebook;
 import com.bookstore.repository.EbookRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.bookstore.repository.PaperbackRepository;
 import org.springframework.transaction.annotation.Transactional;
 
+@RequiredArgsConstructor
 @Service
 public class BookstoreService {
 
     private final AuthorRepository authorRepository;
     private final PaperbackRepository paperbackRepository;
     private final EbookRepository ebookRepository;
-
-    public BookstoreService(AuthorRepository authorRepository,
-            PaperbackRepository paperbackRepository,
-            EbookRepository ebookRepository) {
-
-        this.authorRepository = authorRepository;
-        this.paperbackRepository = paperbackRepository;
-        this.ebookRepository = ebookRepository;
-    }
 
     @Transactional
     public void persistAuthorWithBooks() {
@@ -53,15 +46,13 @@ public class BookstoreService {
 
     @Transactional
     public void fetchAndRemovePaperback() {
-        Paperback paperback = paperbackRepository
-                .findByTitle("The beatles anthology");        
+        Paperback paperback = paperbackRepository.findByTitle("The beatles anthology");
         paperbackRepository.delete(paperback);
     }
 
     @Transactional
     public void fetchAndRemoveEbook() {        
-        Ebook ebook = ebookRepository
-                .findByTitle("Anthology myths");         
+        Ebook ebook = ebookRepository.findByTitle("Anthology myths");
         ebookRepository.delete(ebook);
     }  
 }

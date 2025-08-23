@@ -18,6 +18,7 @@ public class BookstoreService {
     public void fetchWithDuplicates() {
         System.out.println("\nFetching authors with duplicates ...");
         List<Author> authors = authorRepository.fetchWithDuplicates();
+        System.out.println("authors size: ()"+ authors.size());
 
         authors.forEach(a -> {
             System.out.println("Id: " + a.getId() + ": Name: " + a.getName() + " Books: " + a.getBooks());

@@ -1,20 +1,21 @@
 package com.bookstore.entity;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 @Entity
 public class Author implements Serializable {
@@ -29,8 +30,7 @@ public class Author implements Serializable {
     private String genre;
     private int age;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            mappedBy = "author", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author", orphanRemoval = true)
     private List<Book> books = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -19,3 +19,18 @@
 
 -----------------------------------------------------------------------------------------------------------------------    
 
+
+Why you don’t see duplicates
+
+JPA + Hibernate contract:
+Even if the SQL produces duplicate Author rows (because of the LEFT JOIN FETCH), Hibernate deduplicates results in memory when hydrating entities into the persistence context.
+That means for any given Author.id, you’ll always get one entity object in the returned List.
+
+So:
+
+fetchWithDuplicates() → Hibernate deduplicates. You don’t see repeated Author objects.
+
+fetchWithoutHint() → DISTINCT in JPQL affects entity uniqueness, not SQL. Hibernate again deduplicates.
+
+fetchWithHint() → The hint hibernate.query.passDistinctThrough=false only tells Hibernate don’t push DISTINCT to SQL, handle it in-memory. But since Hibernate was deduplicating anyway, the outcome looks the same.
+

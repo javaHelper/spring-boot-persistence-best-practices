@@ -21,7 +21,7 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
     @Query("SELECT DISTINCT a FROM Author a LEFT JOIN FETCH a.books")
     List<Author> fetchWithoutHint();
 
-    @Query("SELECT DISTINCT a FROM Author a LEFT JOIN FETCH a.books")
+    @Query("SELECT a FROM Author a LEFT JOIN FETCH a.books")
     @QueryHints(value = @QueryHint(name = "hibernate.query.passDistinctThrough", value = "false"))
     List<Author> fetchWithHint();
 }
