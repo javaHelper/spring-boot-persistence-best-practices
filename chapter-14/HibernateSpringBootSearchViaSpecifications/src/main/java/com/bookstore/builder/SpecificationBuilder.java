@@ -2,9 +2,10 @@ package com.bookstore.builder;
 
 import com.bookstore.builder.Condition.LogicalOperatorType;
 import com.bookstore.builder.Condition.OperationType;
+import org.springframework.data.jpa.domain.Specification;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.data.jpa.domain.Specification;
 
 public class SpecificationBuilder<T> {
 
@@ -19,8 +20,29 @@ public class SpecificationBuilder<T> {
         conditions.add(new Condition(leftHand, rightHand, operation, operator));
         return this;
     }
-
     public Specification<T> build() {
+        if (conditions.isEmpty()) {
+            return null;
+        }
+
+        List<Specification<T>> specifications = new ArrayList<>();
+        for (Condition condition : conditions) {
+            specifications.add(new SpecificationChunk(condition));
+        }
+
+        Specification<T> finalSpecification = specifications.get(0);
+        for (int i = 1; i < conditions.size(); i++) {
+            if (!conditions.get(i - 1).getOperator().equals(LogicalOperatorType.END)) {
+                finalSpecification = conditions.get(i - 1).getOperator().equals(LogicalOperatorType.OR)
+                        ? finalSpecification.or(specifications.get(i))
+                        : finalSpecification.and(specifications.get(i));
+            }
+        }
+
+        return finalSpecification;
+    }
+
+    /*public Specification<T> build() {
         if (conditions.isEmpty()) {
             return null;
         }
@@ -40,5 +62,5 @@ public class SpecificationBuilder<T> {
         }
 
         return finalSpecification;
-    }
+    }*/
 }

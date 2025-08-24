@@ -1,22 +1,24 @@
 package com.bookstore.service;
 
-import static com.bookstore.builder.Condition.LogicalOperatorType.AND;
-import static com.bookstore.builder.Condition.LogicalOperatorType.END;
-import static com.bookstore.builder.Condition.OperationType.EQUAL;
-import static com.bookstore.builder.Condition.OperationType.GREATER_THAN;
-import static com.bookstore.builder.Condition.OperationType.LESS_THAN;
 import com.bookstore.builder.SpecificationBuilder;
 import com.bookstore.entity.Author;
 import com.bookstore.entity.Book;
 import com.bookstore.repository.AuthorRepository;
 import com.bookstore.repository.BookRepository;
-import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+import static com.bookstore.builder.Condition.LogicalOperatorType.AND;
+import static com.bookstore.builder.Condition.LogicalOperatorType.END;
+import static com.bookstore.builder.Condition.OperationType.EQUAL;
+import static com.bookstore.builder.Condition.OperationType.GREATER_THAN;
+import static com.bookstore.builder.Condition.OperationType.LESS_THAN;
 
 @Service
 public class BookstoreService {
@@ -30,7 +32,7 @@ public class BookstoreService {
     }
 
     public void fetchAuthors() {
-        SpecificationBuilder<Author> specBuilder = new SpecificationBuilder();
+        SpecificationBuilder<Author> specBuilder = new SpecificationBuilder<>();
 
         Specification<Author> specAuthor = specBuilder
                 .with("age", "40", GREATER_THAN, AND)
@@ -43,7 +45,7 @@ public class BookstoreService {
     }
 
     public void fetchBooksPage(int page, int size) {
-        SpecificationBuilder<Book> specBuilder = new SpecificationBuilder();
+        SpecificationBuilder<Book> specBuilder = new SpecificationBuilder<>();
 
         Specification<Book> specBook = specBuilder
                 .with("price", "60", LESS_THAN, END)
