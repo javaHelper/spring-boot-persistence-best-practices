@@ -14,11 +14,9 @@ import static com.bookstore.specs.BookSpecs.isPriceGt35;
 @RequiredArgsConstructor
 @Service
 public class BookstoreService {
-
     private final BookRepositoryFetchModeJoin bookRepositoryFetchModeJoin;
     private final BookRepositoryEntityGraph bookRepositoryEntityGraph;
     private final BookRepositoryJoinFetch bookRepositoryJoinFetch;
-
 
     public void displayBookById() {
         Book book = bookRepositoryFetchModeJoin.findById(1L).orElseThrow(); // LEFT JOIN
