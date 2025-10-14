@@ -1,1 +1,0 @@
-INSERT INTO inventory (id, title, quantity) VALUES ("1", "A People's History", 10);
