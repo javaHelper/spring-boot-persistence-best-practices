@@ -20,7 +20,6 @@ public class RepositoryProfiler {
 
     @Around("intercept()")
     public Object profile(ProceedingJoinPoint joinPoint) {
-
         long startMs = System.currentTimeMillis();
 
         Object result = null;
@@ -34,8 +33,7 @@ public class RepositoryProfiler {
         long elapsedMs = System.currentTimeMillis() - startMs;
 
         // you may like to use logger.debug
-        logger.info(joinPoint.getTarget() + "." + joinPoint.getSignature()
-                + ": Execution time: " + elapsedMs + " ms");
+        logger.info(joinPoint.getTarget() + "." + joinPoint.getSignature() + ": Execution time: " + elapsedMs + " ms");
 
         // pay attention that this line may return null
         return result;
