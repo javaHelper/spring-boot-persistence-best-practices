@@ -22,7 +22,6 @@ public class MainApplication {
     @Bean
     public ApplicationRunner init() {
         return args -> {
-            
             bookstoreService.persistAuthor();
             bookstoreService.displayAuthor();
         };
