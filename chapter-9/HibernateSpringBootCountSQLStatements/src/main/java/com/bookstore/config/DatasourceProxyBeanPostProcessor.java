@@ -11,6 +11,7 @@ import org.springframework.util.ReflectionUtils;
 import javax.sql.DataSource;
 import java.lang.reflect.Method;
 import java.util.logging.Logger;
+
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -54,15 +55,10 @@ public class DatasourceProxyBeanPostProcessor implements BeanPostProcessor {
 
         @Override
         public Object invoke(final MethodInvocation invocation) throws Throwable {
-
-            final Method proxyMethod = ReflectionUtils.
-                    findMethod(this.dataSource.getClass(),
-                            invocation.getMethod().getName());
-
+            final Method proxyMethod = ReflectionUtils.findMethod(this.dataSource.getClass(), invocation.getMethod().getName());
             if (proxyMethod != null) {
                 return proxyMethod.invoke(this.dataSource, invocation.getArguments());
             }
-
             return invocation.proceed();
         }
     }

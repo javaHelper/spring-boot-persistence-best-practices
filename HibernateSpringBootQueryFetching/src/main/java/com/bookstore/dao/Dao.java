@@ -1,11 +1,12 @@
 package com.bookstore.dao;
 
-import java.io.Serializable;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.io.Serializable;
 
 @Repository
 @Transactional(readOnly = true)

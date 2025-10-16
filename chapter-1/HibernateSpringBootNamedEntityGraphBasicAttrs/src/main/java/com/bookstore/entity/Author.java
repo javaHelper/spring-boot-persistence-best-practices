@@ -27,13 +27,14 @@ public class Author implements Serializable {
     private Long id;
 
     private String name;
+
     @Basic(fetch = FetchType.LAZY)
     private String genre;
+
     @Basic(fetch = FetchType.LAZY)
     private int age;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            mappedBy = "author", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author", orphanRemoval = true)
     private List<Book> books = new ArrayList<>();
 
     public void addBook(Book book) {
@@ -55,45 +56,5 @@ public class Author implements Serializable {
             book.setAuthor(null);
             iterator.remove();
         }
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
     }
 }
