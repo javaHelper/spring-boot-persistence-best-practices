@@ -1,6 +1,5 @@
 package com.bookstore.entity;
 
-import com.bookstore.entity.Book;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -9,11 +8,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 @Entity
 public class ShoppingCart implements Serializable {
 
@@ -27,31 +28,7 @@ public class ShoppingCart implements Serializable {
 
     // LAZY is default
     @ElementCollection(fetch = FetchType.LAZY)
-    @CollectionTable(name = "shopping_cart_books",
-            joinColumns = @JoinColumn(name = "shopping_cart_id"))
+    @CollectionTable(name = "shopping_cart_books", joinColumns = @JoinColumn(name = "shopping_cart_id"))
     private List<Book> books = new ArrayList<>();
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
 }
