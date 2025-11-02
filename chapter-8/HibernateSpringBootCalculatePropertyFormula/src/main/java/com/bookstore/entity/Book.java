@@ -1,13 +1,16 @@
 package com.bookstore.entity;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+import lombok.Data;
 import org.hibernate.annotations.Formula;
 
+import java.io.Serializable;
+
+@Data
 @Entity
 public class Book implements Serializable {
 
@@ -24,38 +27,6 @@ public class Book implements Serializable {
     @Formula("price - price * 0.25")
     private double discounted;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     @Transient
     public double getDiscounted() {
         return discounted;
@@ -63,7 +34,6 @@ public class Book implements Serializable {
 
     @Override
     public String toString() {
-        return "Book{" + "id=" + id + ", title=" + title + ", isbn="
-                + isbn + ", price=" + price + ", discounted=" + discounted + '}';
+        return "Book{" + "id=" + id + ", title=" + title + ", isbn=" + isbn + ", price=" + price + ", discounted=" + discounted + '}';
     }
 }
