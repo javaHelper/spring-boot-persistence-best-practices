@@ -3,9 +3,6 @@ package com.bookstore.service;
 import com.bookstore.entity.Author;
 import com.bookstore.entity.Book;
 import com.bookstore.repository.AuthorRepository;
-import java.util.Arrays;
-import java.util.Map;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.hibernate.engine.spi.EntityEntry;
@@ -13,6 +10,9 @@ import org.hibernate.engine.spi.EntityKey;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Arrays;
+import java.util.Map;
 
 @Service
 public class BookstoreService {
@@ -66,10 +66,8 @@ public class BookstoreService {
         int managedEntities = persistenceContext.getNumberOfManagedEntities();
         int collectionEntriesSize = persistenceContext.getCollectionEntriesSize();
         
-        System.out.println("Total number of managed entities: "
-                + managedEntities);
-        System.out.println("Total number of collection entries: "
-                + collectionEntriesSize);
+        System.out.println("Total number of managed entities: " + managedEntities);
+        System.out.println("Total number of collection entries: " + collectionEntriesSize);
 
         // getEntitiesByKey() will be removed and probably replaced with #iterateEntities() 
         Map<EntityKey, Object> entitiesByKey = persistenceContext.getEntitiesByKey();        
@@ -81,10 +79,7 @@ public class BookstoreService {
             System.out.println("\nStatus and hydrated state:");
             for (Object entry : entitiesByKey.values()) {
                 EntityEntry ee = persistenceContext.getEntry(entry);
-                System.out.println(
-                        "Entity name: " + ee.getEntityName()
-                        + " | Status: " + ee.getStatus()
-                        + " | State: " + Arrays.toString(ee.getLoadedState()));
+                System.out.println("Entity name: " + ee.getEntityName() + " | Status: " + ee.getStatus() + " | State: " + Arrays.toString(ee.getLoadedState()));
             }
         }
 
@@ -98,11 +93,7 @@ public class BookstoreService {
     }
 
     private org.hibernate.engine.spi.PersistenceContext getPersistenceContext() {
-
-        SharedSessionContractImplementor sharedSession = entityManager.unwrap(
-                SharedSessionContractImplementor.class
-        );
-
+        SharedSessionContractImplementor sharedSession = entityManager.unwrap(SharedSessionContractImplementor.class);
         return sharedSession.getPersistenceContext();
     }
 }
