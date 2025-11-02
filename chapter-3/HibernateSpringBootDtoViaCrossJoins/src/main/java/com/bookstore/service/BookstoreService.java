@@ -1,22 +1,19 @@
 package com.bookstore.service;
 
-import com.bookstore.repository.BookRepository;
-import java.util.List;
-import org.springframework.stereotype.Service;
-import com.bookstore.repository.FormatRepository;
 import com.bookstore.projection.BookTitleAndFormatType;
+import com.bookstore.repository.BookRepository;
+import com.bookstore.repository.FormatRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+@RequiredArgsConstructor
 @Service
 public class BookstoreService {
 
     private final FormatRepository formatRepository;
     private final BookRepository bookRepository;
-
-    public BookstoreService(FormatRepository formatRepository,
-            BookRepository bookRepository) {
-        this.formatRepository = formatRepository;
-        this.bookRepository = bookRepository;
-    }
 
     // Cross join books and formats (JPQL)    
     public List<BookTitleAndFormatType> fetchBooksAndFormatsJpql() {
