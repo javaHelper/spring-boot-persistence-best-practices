@@ -26,10 +26,10 @@ public class MainApplication {
     public ApplicationRunner init() {
         return args -> {
             List<AuthorDto> authors = bookstoreService.fetchByGenre();
-            System.out.println("Number of authors:" + authors.size());
+            System.out.println(STR."Number of authors: \{authors.size()}");
 
             for (AuthorDto author : authors) {
-                System.out.println("Author name: " + author.name() + " | Age: " + author.age());
+                System.out.println(STR."Author name: \{author.name()} | Age: \{author.age()}");
             }
         };
     }
